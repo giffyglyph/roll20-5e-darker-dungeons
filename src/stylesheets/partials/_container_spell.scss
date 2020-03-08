@@ -1,0 +1,131 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-container-spell {
+		display: flex;
+		flex-direction: column;
+		min-height: 65px;
+		min-width: 0;
+		position: relative;
+		z-index: 0;
+		margin-top: 3px;
+
+		&::before {
+			border-image: url($img-panel) 50 50 50 50 fill stretch;
+			border-style: solid;
+			border-width: 15px 15px;
+			box-sizing: border-box;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+		}
+
+		.sheet-container-header {
+			z-index: 2;
+			border: 0;
+			height: 52px;
+			padding: 0;
+			top: -9px;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: -18px;
+
+			.sheet-spells-level {
+				font-size: 20px;
+				font-weight: bold;
+				display: inline-block;
+				width: 27px;
+				text-align: center;
+				flex-shrink: 0;
+				margin-right: 15px;
+			}
+
+			.sheet-spells-slots {
+				width: 100%;
+				text-align: center;
+				display: flex;
+				overflow: hidden;
+				padding-right: 15px;
+
+				&.sheet-spells-slots-cantrip {
+					justify-content: center;
+					font-weight: bold;
+					font-size: 9px;
+					text-transform: uppercase;
+					padding-right: 34px;
+				}
+
+				input {
+					flex-grow: 0;
+					width: 100%;
+					text-align: right;
+					padding: 0;
+					border: 0;
+					margin-bottom: 3px;
+					margin-top: 1px;
+					padding-top: 2px;
+					min-width: 0;
+
+					+ * {
+						color: #dddddd;
+					}
+
+					~ * {
+						text-transform: none;
+						font-size: 13px;
+						line-height: 24px;
+						margin-left: 3px;
+						font-weight: bold;
+					}
+				}
+
+			}
+
+			&::before {
+				border-style: solid;
+				box-sizing: border-box;
+				content: '';
+				display: block;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: -1;
+				border-image: url($img-spell-header) 155 82 155 82 fill stretch;
+				border-width: 52px 28px 0;
+			}
+		}
+
+		.sheet-container-body {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			margin-bottom: 2px;
+			overflow: hidden;
+			padding: 5px 10px;
+
+			.sheet-container-body-header {
+				text-transform: uppercase;
+				display: flex;
+				color: #bab8b8;
+		    font-size: 8px;
+		    font-weight: bold;
+		    line-height: 10px;
+				margin-bottom: 2px;
+				display: none;
+
+				span {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

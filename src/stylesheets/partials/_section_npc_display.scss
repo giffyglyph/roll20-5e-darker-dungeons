@@ -1,0 +1,430 @@
+// Styles for npc display page.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-npc-display {
+
+		.sheet-npc-header {
+
+			.sheet-npc-header-name {
+				padding-right: 20px;
+			}
+
+			> span {
+				font-size: $font-size-sm;
+				font-style: italic;
+			}
+
+			button {
+				background: none;
+				border: 0;
+				box-shadow: none;
+				color: $theme-primary;
+				display: block;
+				font-size: 24px;
+				font-variant: small-caps;
+				font-weight: bold;
+				margin-bottom: $spacing;
+				padding: 0;
+				width: 100%;
+				text-align: left;
+
+				span {
+					display: block;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				&:hover {
+					background: $hover-bg;
+				}
+			}
+		}
+
+		.sheet-npc-section {
+			border-bottom: 2px solid $theme-primary;
+			border-top: 2px solid $theme-primary;
+			color: $theme-primary;
+			line-height: 16px;
+			margin: $spacing 0;
+			padding: $spacing 0;
+			position: relative;
+
+			+ .sheet-npc-section {
+				border-top: 0;
+				padding-top: 0;
+			}
+
+			label {
+				color: inherit;
+				display: inline-block;
+				font-weight: bold;
+				width: auto;
+			}
+
+			.sheet-btn-inline {
+				background: none;
+				border: 0;
+				box-shadow: none;
+				margin: 0;
+				padding: 0;
+
+				&:hover {
+					background: $hover-bg;
+				}
+			}
+		}
+
+		.sheet-npc-section-abilities {
+			display: flex;
+			justify-content: space-between;
+
+			.sheet-btn-npc-ability {
+				background: none;
+				border: 0;
+				box-shadow: none;
+				color: inherit;
+				flex-grow: 1;
+				margin: 0;
+				padding: 0;
+				text-shadow: none;
+
+				&:hover {
+					background: $hover-bg;
+				}
+
+				.sheet-btn-npc-ability-title {
+					display: block;
+					font-weight: bold;
+				}
+
+				.sheet-value-negative[value="0"] + *::before {
+					content: "(+";
+				}
+
+				.sheet-btn-npc-ability-mod {
+
+					&::after {
+						content: ")";
+					}
+
+					&::before {
+						content: "(";
+					}
+				}
+			}
+		}
+
+		.sheet-npc-section-skills {
+
+			button {
+				background: none;
+				border: 0;
+				box-shadow: none;
+				color: inherit;
+				margin: 0;
+				padding: 0;
+
+				&:hover {
+					background: $hover-bg;
+				}
+
+				> :last-child {
+
+					&::before {
+						content: "+"
+					}
+				}
+			}
+		}
+
+		.sheet-npc-section-saving-throws,
+		.sheet-npc-section-skills {
+
+			.sheet-field-toggle[value="1"] + button > :last-child::after {
+				content: ",";
+			}
+		}
+
+		.sheet-btn-npc-initiative {
+			background: none;
+			border: 0;
+			box-shadow: none;
+			color: inherit;
+			position: absolute;
+			right: 0;
+
+			&:hover {
+				background: $hover-bg;
+			}
+
+			> :first-child {
+				display: block;
+				font-family: "dicefontd20";
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+			> :last-child {
+				font-size: 11px;
+			}
+		}
+
+		.sheet-npc-section-saving-throws button {
+			background: none;
+			border: 0;
+			box-shadow: none;
+			color: inherit;
+			margin: 0;
+			padding: 0;
+
+			> :last-child::before {
+				content: "+";
+			}
+		}
+
+		.sheet-panel-npc {
+			border-radius: 4px;
+			border: 1px solid $input-border;
+			margin-top: $spacing;
+
+			.sheet-panel-header {
+				background: none;
+				border-bottom: 2px solid $theme-primary;
+				color: $theme-primary;
+				font-size: 18px;
+				font-variant: small-caps;
+				font-weight: bold;
+				height: inherit;
+				line-height: inherit;
+				margin: 0px;
+				padding: $spacing;
+				text-align: left;
+				text-transform: capitalize;
+			}
+
+			.sheet-panel-body {
+				padding: $spacing;
+			}
+		}
+
+		.sheet-npc-traits,
+		.sheet-npc-actions,
+		.sheet-npc-reactions,
+		.sheet-npc-legendary-actions {
+			margin-top: 5px;
+
+			.repitem:not(:last-of-type) {
+				border-bottom: 1px dotted #dddddd;
+				padding-bottom: 5px;
+				margin-bottom: 5px;
+			}
+		}
+
+		.sheet-npc-traits {
+			margin-top: 0;
+		}
+
+		.sheet-npc-trait {
+			font-size: 11px;
+			padding-right: 20px;
+
+			.sheet-npc-trait-name {
+				font-weight: bold;
+				padding: 0 5px;
+				background: #dddddd;
+				border-radius: 3px;
+				display: inline-block;
+			}
+
+			.sheet-npc-trait-desc {
+				display: inline;
+			}
+		}
+
+		.sheet-npc-reaction {
+			font-size: 11px;
+
+			.sheet-npc-reaction-name {
+				font-weight: bold;
+				padding: 0 5px;
+				background: #dddddd;
+				border-radius: 3px;
+				display: block;
+				text-align: center;
+			}
+
+			.sheet-npc-reaction-description {
+				display: block;
+				white-space: normal;
+			}
+		}
+
+		.sheet-npc-action {
+			font-size: 11px;
+
+			button {
+
+				&:hover {
+					background: $hover-bg;
+				}
+			}
+
+			.sheet-fieldset-item-npcaction-checked-name {
+				background: #dddddd;
+				display: inline-block;
+				border-radius: 3px;
+				padding: 0 5px;
+				width: 100%;
+				text-align: center;
+			}
+
+			.sheet-fieldset-item-npcaction-checked-description {
+				white-space: normal;
+			}
+		}
+
+		.sheet-npc-legendary-action {
+			font-size: 11px;
+
+			button {
+
+				&:hover {
+					background: $hover-bg;
+				}
+			}
+
+			.sheet-fieldset-item-npcaction-checked-name {
+				background: #dddddd;
+				display: inline-block;
+				border-radius: 3px;
+				padding: 0 5px;
+				width: 100%;
+				text-align: center;
+			}
+
+			.sheet-fieldset-item-npcaction-checked-description {
+				white-space: normal;
+			}
+		}
+
+		.sheet-npc-legendary-actions-description {
+			font-size: 11px;
+			padding: 5px;
+			margin-bottom: 5px;
+			border: 1px solid #dddddd;
+			border-radius: 3px;
+		}
+
+		.sheet-fieldset-item-npcaction {
+
+			.sheet-fieldset-item-npcaction-checked-roll {
+				background: none;
+				border: 0;
+				box-shadow: none;
+				text-align: left;
+				width: 100%;
+			}
+
+			.sheet-fieldset-item-npcaction-checked-name {
+				font-weight: bold;
+			}
+
+			.sheet-fieldset-item-npcaction-checked-attack > :not(:last-child) {
+				font-style: italic;
+			}
+
+			.sheet-fieldset-item-npcaction-checked-onhit > :first-child {
+				font-style: italic;
+			}
+		}
+
+		.sheet-fieldset-item-npcreaction {
+
+			.sheet-fieldset-item-npcaction-checked-roll {
+				background: none;
+				border: 0;
+				box-shadow: none;
+				text-align: left;
+				width: 100%;
+			}
+
+			.sheet-fieldset-item-npcreaction-name {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.sheet-toggle-npc:not([value="0"])	+ .sheet-toggle-npc-spells:checked ~ {
+
+		.sheet-section-npc .sheet-section-npc-footer {
+			display: none;
+		}
+
+		.sheet-section-pc {
+			display: block;
+			width: $width-npc;
+			margin: 0 auto;
+			margin-top: 6px;
+
+			.sheet-section-pc-header {
+				display: none;
+			}
+
+			.sheet-tabs {
+				margin-top: 0;
+				width: $width-npc;
+				min-height: 0;
+			}
+
+			.sheet-tab {
+				display: none;
+				position: relative;
+				width: 100%;
+				margin: 0 auto;
+
+				> :first-child {
+					display: none;
+				}
+
+				.sheet-tab-label,
+				.sheet-tab-content {
+					display: none;
+					position: relative;
+					padding: 0;
+				}
+
+				&:nth-of-type(5) {
+					display: block;
+
+					.sheet-tab-content {
+						display: block;
+						top: 0;
+
+						.sheet-container-well-spell-attributes {
+							display: none;
+						}
+
+						.sheet-container-well-spells {
+							margin-bottom: 0;
+							border-radius: 0;
+							grid-template-columns: 1fr;
+							grid-auto-flow: inherit;
+
+							> .sheet-container-spell {
+								min-height: 112px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.sheet-toggle-npc:not([value="0"]) ~ .sheet-toggle-npc-edit:checked ~ {
+
+		.sheet-section-pc .sheet-tab-content {
+			display: none !important;
+		}
+	}
+}

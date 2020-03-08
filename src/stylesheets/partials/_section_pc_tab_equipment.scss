@@ -1,0 +1,455 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-pc .sheet-tab-equipment {
+
+		.sheet-alert-warning {
+			background: $theme-primary;
+			font-size: 9px;
+			text-align: center;
+			margin-bottom: 4px;
+			color: white;
+			border-radius: 3px;
+		}
+
+		.sheet-pc-purse-cp,
+		.sheet-pc-purse-sp,
+		.sheet-pc-purse-ep,
+		.sheet-pc-purse-gp,
+		.sheet-pc-purse-pp,
+		.sheet-pc-purse-other {
+
+			.sheet-container-header {
+				padding: 0;
+			}
+
+			.sheet-container-header input {
+				text-align: center;
+				width: 100%;
+				border: 0;
+				padding-left: 0;
+				padding-right: 0;
+				font-size: 8px;
+				font-weight: bold;
+				background: none;
+
+				&:hover {
+					background: $hover-bg;
+				}
+			}
+
+			.sheet-container-body input {
+				width: 40px;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		.sheet-pc-purse-cp {
+			grid-area: cp;
+		}
+
+		.sheet-pc-purse-sp {
+			grid-area: sp;
+		}
+
+		.sheet-pc-purse-gp {
+			grid-area: gp;
+		}
+
+		.sheet-pc-purse-ep {
+			grid-area: ep;
+		}
+
+		.sheet-pc-purse-pp {
+			grid-area: pp;
+		}
+
+		.sheet-pc-purse-other {
+			grid-area: other;
+		}
+
+		> input[type="radio"]:checked ~ .sheet-tab-content {
+			display: grid;
+			grid-template-columns: auto 262.5px;
+			grid-template-rows: 85px 120px 110px auto;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"equipment supplies"
+				"equipment purse"
+				"equipment encumberance"
+				"equipment general";
+		}
+
+		.sheet-container-well-equipment {
+			grid-area: equipment;
+			display: grid;
+		}
+
+		.sheet-container-well-equipment-supplies {
+			grid-area: supplies;
+			display: grid;
+			grid-template-rows: repeat(2, 30px);
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"rations"
+				"water";
+		}
+
+		.sheet-container-well-equipment-purse {
+			grid-area: purse;
+			display: grid;
+			grid-template-rows: repeat(3, 30px);
+			grid-template-columns: 1fr 1fr;
+			grid-row-gap: 5px;
+			grid-column-gap: 5px;
+			grid-template-areas:
+				"cp gp"
+				"sp pp"
+				"ep other"
+				". .";
+		}
+
+		.sheet-container-well-equipment-encumberance {
+			grid-area: encumberance;
+			display: grid;
+			grid-template-rows: 65px auto;
+			grid-row-gap: 5px;
+		}
+
+		.sheet-container-well-equipment-general {
+			grid-area: general;
+			display: grid;
+			grid-template-rows: auto;
+			grid-row-gap: 5px;
+		}
+
+		.sheet-pc-otheritem {
+			font-size: 11px;
+
+			span:first-of-type {
+				font-weight: bold;
+				background: #dddddd;
+				padding: 3px 5px;
+				margin-right: 3px;
+				border-radius: 3px;
+			}
+		}
+
+		.sheet-pc-rations {
+			grid-area: rations;
+		}
+
+		.sheet-pc-water {
+			grid-area: water;
+		}
+
+		.sheet-pc-equipment-container-footer {
+			font-size: 7px;
+			display: flex;
+			text-transform: uppercase;
+			opacity: 1;
+			line-height: 1;
+			margin-top: 0;
+			background: #dddddd;
+			padding: 3px 5px;
+			padding-right: 20px;
+			border-radius: 0 0 4px 4px;
+
+			span:first-of-type {
+				flex-grow: 1;
+			}
+
+			span:not(:first-of-type) {
+				width: 50px;
+				margin-left: 1px;
+				text-align: center;
+			}
+		}
+
+		.sheet-pc-item-equipped {
+			background: $theme-primary;
+			color: white;
+			display: inline-block;
+			height: 14px;
+			width: 14px;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 100%;
+		}
+
+		.sheet-pc-item-carried {
+			background: $theme-secondary;
+			color: black;
+			display: inline-block;
+			height: 14px;
+			width: 14px;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 100%;
+		}
+
+		[name="attr_equipped"][value="1"] ~ .sheet-pc-item-carried {
+			display: none;
+		}
+
+		[name="attr_equipped"][value="0"] ~ [name="attr_carried"][value="0"] + .sheet-pc-item-carried {
+			display: inline-flex !important;
+			background: none;
+			border: 1px solid #dddddd;
+			color: white;
+		}
+
+		.sheet-pc-item {
+			font-size: 11px;
+			padding-right: 20px;
+
+			.sheet-pc-item-header {
+				font-size: 7px;
+				display: flex;
+				text-transform: uppercase;
+				opacity: 1;
+				line-height: 1;
+				margin-top: 0;
+				padding: 0 0 3px;
+				color: #b1b1b1;
+
+				span:first-of-type {
+					flex-grow: 1;
+				}
+
+				span:not(:first-of-type) {
+					width: 50px;
+					margin-left: 1px;
+					text-align: center;
+				}
+			}
+
+			.sheet-pc-item-content {
+				display: flex;
+				border-radius: 3px;
+
+				input {
+					text-align: center;
+					width: 100%;
+					height: 100%;
+					border: none;
+					padding: 0;
+				}
+			}
+
+			&:hover {
+				background: #f2f2f2;
+			}
+
+			.sheet-pc-item-name {
+				flex-grow: 1;
+			}
+
+			.sheet-pc-item-quantity,
+			.sheet-pc-item-notches,
+			.sheet-pc-item-weight,
+			.sheet-pc-item-slots {
+				border: 1px solid #cccccc;
+				border-radius: 3px;
+				height: 20px;
+				display: inline-block;
+				flex-grow: 0;
+				width: 50px;
+				text-align: center;
+				margin-left: 1px;
+				display: flex;
+			}
+		}
+
+		.sheet-pc-equipment-container {
+			background: $theme-primary;
+			color: white;
+			font-size: 11px;
+			border-radius: 4px 4px 0 0;
+			padding: 0 5px;
+
+			.sheet-pc-equipment-container-slots {
+				opacity: .75;
+			}
+
+			.sheet-pc-item-equipped {
+				background: none;
+				border: 1px solid #dddddd;
+				color: white;
+			}
+
+			.sheet-pc-item-carried {
+				background: none;
+				border: 1px solid #dddddd;
+				color: white;
+			}
+
+			[name="attr_equipped"][value="1"] ~ .sheet-pc-item-carried {
+				display: none;
+			}
+
+			[name="attr_equipped"][value="0"] ~ [name="attr_carried"][value="0"] + .sheet-pc-item-carried {
+				display: inline-flex !important;
+				background: none;
+				border: 1px solid #dddddd;
+				color: $theme-primary;
+			}
+		}
+
+		.sheet-form-item {
+
+			.sheet-item-columns-2 {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 5px;
+
+				> .sheet-form-group {
+					margin: 0;
+				}
+			}
+
+			.sheet-form-body {
+				display: grid;
+				grid-template-columns: auto 115px;
+				grid-column-gap: 10px;
+			}
+
+			.sheet-toggle-unchecked,
+			.sheet-toggle-checked {
+				margin-top: 4px;
+			}
+		}
+
+		.sheet-pc-carrying-status {
+
+			span {
+				display: block;
+				border-radius: 3px;
+				text-align: center;
+				font-size: 9px;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: white;
+				line-height: 20px;
+
+				&.sheet-pc-unencumbered {
+					background: #b4cf01;
+				}
+
+				&.sheet-pc-immobile,
+				&.sheet-pc-over {
+					background: #cf4601;
+					display: none;
+				}
+
+				&.sheet-pc-encumbered {
+					background: #cfb401;
+					display: none;
+				}
+
+				&.sheet-pc-heavily {
+					background: #cf7d01;
+					display: none;
+				}
+			}
+		}
+
+		.sheet-pc-encumberance[value="IMMOBILE"],
+		.sheet-pc-encumberance[value="HEAVILY ENCUMBERED"],
+		.sheet-pc-encumberance[value="ENCUMBERED"],
+		.sheet-pc-encumberance[value="OVER CARRYING CAPACITY"] {
+
+			~ .sheet-pc-unencumbered {
+				display: none;
+			}
+		}
+
+		.sheet-pc-encumberance[value="IMMOBILE"] ~ .sheet-pc-immobile {
+			display: block;
+		}
+
+		.sheet-pc-encumberance[value="HEAVILY ENCUMBERED"] ~ .sheet-pc-heavily {
+			display: block;
+		}
+
+		.sheet-pc-encumberance[value="ENCUMBERED"] ~ .sheet-pc-encumbered {
+			display: block;
+		}
+
+		.sheet-pc-encumberance[value="OVER CARRYING CAPACITY"] ~ .sheet-pc-over {
+			display: block;
+		}
+	}
+
+	.sheet-pc-equipment-other {
+
+		.repitem + .repitem {
+			margin-top: 5px;
+			padding-top: 5px;
+			border-top: 1px dotted #dddddd;
+		}
+	}
+
+	.sheet-pc-slots,
+	.sheet-pc-weight {
+
+		.sheet-container-body {
+			display: flex;
+			flex-direction: row;
+			padding-top: 0;
+
+			span {
+				align-items: center;
+				color: #dddddd;
+				display: flex;
+				font-size: 24px;
+				justify-content: center;
+			}
+
+			span:nth-of-type(2) {
+				width: 100%;
+				color: black;
+			}
+		}
+
+		.sheet-container-footer {
+			display: flex;
+			padding-left: 10px;
+			padding-right: 10px;
+
+			span {
+				flex-grow: 1;
+				text-align: center;
+				width: 100%;
+			}
+		}
+	}
+
+	.repitem:not(:first-of-type) .sheet-pc-item .sheet-pc-item-header {
+		display: none;
+	}
+
+	.sheet-pc-equipment {
+
+		.sheet-toggle-slots[value="0"] ~ .repcontainer {
+
+			.sheet-pc-equipment-container-footer span:nth-of-type(4),
+			.sheet-pc-item-header span:nth-of-type(4),
+			.sheet-pc-item .sheet-pc-item-slots {
+				display: none;
+			}
+		}
+
+		.sheet-toggle-slots[value="1"] ~ .repcontainer {
+
+			.sheet-pc-equipment-container-footer span:nth-of-type(3),
+			.sheet-pc-item-header span:nth-of-type(3),
+			.sheet-pc-item .sheet-pc-item-weight {
+				display: none;
+			}
+		}
+	}
+}

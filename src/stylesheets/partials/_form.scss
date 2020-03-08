@@ -1,0 +1,137 @@
+// Styles for sheet forms.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-form {
+		border-radius: $border-radius;
+		border: 2px solid $theme-primary;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+		&.sheet-form-borderless {
+			border-radius: 0;
+			border: 0;
+
+			.sheet-form-body {
+				padding: 0;
+			}
+		}
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+
+		input,
+		select,
+		textarea,
+		.uneditable-input {
+			box-sizing: border-box;
+			color: $font-color;
+			font-size: 11px;
+			height: 16px;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			min-width: 0;
+		}
+
+		textarea {
+			min-height: 56px;
+			resize: vertical;
+		}
+
+		label {
+			color: rgba($theme-primary, 0.35);
+			font-size: inherit;
+			font-weight: bold;
+			line-height: 16px;
+			margin: 0;
+			padding: 0;
+			white-space: nowrap;
+			width: auto;
+			font-size: $font-size-xs;
+			text-transform: uppercase;
+		}
+
+		select {
+			cursor: pointer;
+		}
+
+		input {
+			border-bottom: 1px solid $theme-secondary;
+			border-left: 0;
+			border-radius: 0;
+			border-right: 0;
+			border-top: 0;
+			text-overflow: ellipsis;
+		}
+
+		.sheet-form-header {
+			background: $theme-primary;
+			color: white;
+			font-size: 9px;
+			font-weight: bold;
+			line-height: 13px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.sheet-form-body {
+			background: white;
+			flex-grow: 1;
+			padding: $spacing;
+		}
+
+		.sheet-toggle + .sheet-form-group,
+		.sheet-form-group + *,
+		.sheet-form-fieldset + * {
+			margin-top: 4px;
+		}
+
+		.sheet-form-group {
+			display: flex;
+
+			> * + * {
+				margin-left: $spacing;
+			}
+		}
+
+		.sheet-form-fieldset {
+			border-radius: $border-radius;
+			border: 2px solid rgba($theme-primary, 0.35);
+
+			.sheet-form-fieldset-header {
+				background: rgba($theme-primary, 0.35);
+				color: white;
+				font-size: $font-size-xs;
+				font-weight: bold;
+				line-height: 13px;
+				text-align: center;
+				text-transform: uppercase;
+			}
+
+			.sheet-form-fieldset-body {
+				padding: $spacing;
+			}
+		}
+
+		.sheet-form-checkbox {
+			cursor: pointer;
+			display: flex;
+
+			&:hover {
+				background: $hover-bg;
+			}
+
+			input {
+				height: 16px;
+				width: auto;
+
+				+ span {
+					margin-left: $spacing;
+				}
+			}
+		}
+	}
+}

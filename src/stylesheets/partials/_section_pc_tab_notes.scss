@@ -1,0 +1,46 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-pc .sheet-tab-notes {
+
+		> input[type="radio"]:checked ~ .sheet-tab-content {
+			display: grid;
+		}
+
+		.sheet-pc-notes {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-column-gap: 10px;
+			grid-row-gap: 10px;
+			grid-template-areas:
+				"backstory features features"
+				"allies allies treasure";
+
+			textarea {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				resize: none;
+				border: 0;
+				font-size: 11px;
+				line-height: 13px;
+			}
+
+			.sheet-pc-notes-features {
+				grid-area: features;
+			}
+
+			.sheet-pc-notes-backstory {
+				grid-area: backstory;
+			}
+
+			.sheet-pc-notes-allies {
+				grid-area: allies;
+			}
+
+			.sheet-pc-notes-treasure {
+				grid-area: treasure;
+			}
+		}
+	}
+}

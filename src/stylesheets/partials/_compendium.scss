@@ -1,0 +1,32 @@
+// Styles for sheet checkboxes.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-compendium-drop-target.dropping {
+		background: none;
+		position: relative;
+
+		.sheet-section-npc,
+		.sheet-section-pc {
+
+			&::before {
+				content: ' ';
+				position: absolute;
+				height: 100%;
+				z-index: 7;
+				display: block;
+				background: #edb125;
+				opacity: .5;
+				border-radius: 6px;
+			}
+		}
+
+		.sheet-section-npc::before {
+			width: $width-npc;
+		}
+
+		.sheet-section-pc::before {
+			width: $width-pc;
+		}
+	}
+}

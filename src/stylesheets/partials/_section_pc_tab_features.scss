@@ -1,0 +1,303 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-pc .sheet-tab-features {
+
+		> input[type="radio"]:checked ~ .sheet-tab-content {
+			display: grid;
+			grid-template-columns: auto 262.5px;
+			grid-template-rows: 355px auto;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"details features"
+				"memories features";
+		}
+
+		.sheet-container-well-details {
+			grid-area: details;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(4, 1fr);
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"details personality"
+				"details ideals"
+				"details bonds"
+				"details flaws";
+		}
+
+		.sheet-container-well-memories {
+			grid-area: memories;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 30px) auto;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"memories xp"
+				"memories training"
+				"memories notes";
+		}
+
+		.sheet-container-well-features {
+			grid-area: features;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"features";
+		}
+
+		.sheet-pc-details {
+			grid-area: details;
+
+			.sheet-pc-detail {
+				display: flex;
+				height: 20px;
+
+				&:not(:last-of-type) {
+					margin-bottom: 3px;
+				}
+
+				* + * {
+					margin-left: 5px;
+				}
+
+				label,
+				input,
+				select {
+					font-size: 11px;
+					height: 20px;
+					padding: 0;
+					line-height: 20px;
+				}
+
+				input {
+					border-top: 0;
+					border-left: 0;
+					border-right: 0;
+					border-radius: 0;
+					padding: 0 4px;
+				}
+
+				select {
+					cursor: pointer;
+					border-top: 0;
+					border-left: 0;
+					border-right: 0;
+					border-radius: 0;
+				}
+
+				input,
+				select {
+					width: 100%;
+					min-width: 0;
+				}
+
+				label {
+					white-space: nowrap;
+					font-size: 9px;
+					background: #dddddd;
+					border-radius: 3px;
+					width: 60px;
+					font-weight: bold;
+					display: inline-block;
+					flex-grow: 1;
+					flex-shrink: 0;
+					text-align: center;
+				}
+			}
+
+			.sheet-pc-detail-column {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+
+				* {
+					margin: 0;
+					flex-shrink: 0;
+				}
+			}
+
+			.sheet-pc-detail-habit,
+			.sheet-pc-detail-motivation,
+			.sheet-pc-detail-feature {
+				height: auto;
+
+				label {
+					height: 100%;
+				}
+			}
+
+			.sheet-pc-detail-quest {
+				height: 40px;
+
+				label {
+					height: 40px;
+				}
+
+				textarea {
+					height: 40px;
+					font-size: 11px;
+					border-top: 0;
+					border-left: 0;
+					border-right: 0;
+					border-radius: 0;
+					resize: none;
+					padding: 0 4px;
+					line-height: 13px;
+				}
+			}
+		}
+
+		.sheet-pc-personality {
+			grid-area: personality;
+		}
+
+		.sheet-pc-ideals {
+			grid-area: ideals;
+		}
+
+		.sheet-pc-bonds {
+			grid-area: bonds;
+		}
+
+		.sheet-pc-flaws {
+			grid-area: flaws;
+		}
+
+		.sheet-pc-xp {
+			grid-area: xp;
+
+			input {
+				width: 140px;
+			}
+		}
+
+		.sheet-pc-training {
+			grid-area: training;
+		}
+
+		.sheet-pc-memories {
+			grid-area: memories;
+
+			.repitem + .repitem {
+				margin-top: 5px;
+				padding-top: 5px;
+				border-top: 1px dotted #dddddd;
+			}
+
+			.sheet-pc-memory {
+				font-size: 11px;
+
+				span:first-of-type {
+					font-weight: bold;
+					background: #dddddd;
+					padding: 3px 5px;
+					border-radius: 3px;
+				}
+			}
+		}
+
+		.sheet-pc-personality,
+		.sheet-pc-ideals,
+		.sheet-pc-bonds,
+		.sheet-pc-flaws {
+
+			textarea {
+				flex-grow: 1;
+				min-height: 39px;
+				font-size: 11px;
+				border: 0;
+				padding: 0;
+				resize: none;
+				margin: 0;
+				height: auto;
+				line-height: 13px;
+			}
+		}
+
+		.sheet-pc-features {
+			grid-area: features;
+
+			.sheet-checkbox-cog:hover span {
+				color: white;
+				opacity: 1;
+			}
+
+			.repitem + .repitem {
+				margin-top: 5px;
+				padding-top: 5px;
+				border-top: 1px dotted #dddddd;
+			}
+
+			.sheet-pc-feature {
+				font-size: 11px;
+
+				button {
+					background: none;
+					border: 0;
+					box-shadow: none;
+					width: 100%;
+					text-shadow: none;
+
+					&:hover {
+						background: $hover-bg;
+					}
+				}
+
+				.sheet-pc-feature-name {
+					background: $theme-primary;
+					color: white;
+					border-radius: 3px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					padding: 0 20px;
+				}
+
+				.sheet-pc-feature-details {
+					text-align: left;
+					white-space: normal;
+					line-height: 1.3;
+					margin-top: 5px;
+					font-size: 9px;
+				}
+
+				.sheet-pc-feature-source {
+					opacity: .5;
+
+					&::before {
+						content: "(";
+					}
+
+					&::after {
+						content: ")";
+					}
+				}
+			}
+		}
+
+		.sheet-pc-notes {
+			grid-area: notes;
+
+			.repitem + .repitem {
+				margin-top: 5px;
+				padding-top: 5px;
+				border-top: 1px dotted #dddddd;
+			}
+
+			.sheet-pc-note {
+				font-size: 11px;
+
+				span:first-of-type {
+					font-weight: bold;
+					background: #dddddd;
+					padding: 3px 5px;
+					border-radius: 3px;
+				}
+			}
+		}
+	}
+}

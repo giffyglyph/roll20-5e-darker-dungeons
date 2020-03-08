@@ -1,0 +1,99 @@
+// Styles for repeating fieldsets.
+
+.charsheet .sheet-darkerdungeons {
+
+	fieldset {
+		position: relative;
+	}
+
+	.repcontainer {
+		flex-grow: 1;
+	}
+
+	.repcontrol {
+		border-color: $input-border;
+		border-top: 1px solid $input-border;
+		padding-top: 5px;
+		margin-top: 5px;
+
+		.btn {
+			background: none;
+			border-color: $input-border;
+			border-width: 1px;
+			box-shadow: none;
+			font-size: $font-size-xs;
+			font-weight: bold;
+			padding: 0 $spacing;
+
+			&:hover {
+				background: $hover-bg;
+			}
+		}
+	}
+
+	.repitem:not(:first-of-type) {
+		border-color: $input-border;
+	}
+
+	.repitem {
+
+		&:not(:last-of-type) {
+			margin-bottom: 2px;
+		}
+	}
+
+	.repcontainer.editmode + .repcontrol .repcontrol_edit {
+		background: #cf0101;
+		border-color: #cf0101;
+		color: white;
+	}
+
+	.repcontainer.editmode .repitem {
+
+		.itemcontrol {
+			align-items: center;
+			border-bottom: 2px solid transparent;
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: center;
+			z-index: 2;
+
+			&::before {
+				background: rgba(126, 45, 64, 0.25);
+				border-radius: $border-radius;
+				content: '';
+				height: 100%;
+				position: absolute;
+				width: 100%;
+				z-index: -1;
+			}
+		}
+
+		.itemcontrol .btn {
+			box-sizing: border-box;
+			height: 18px;
+			line-height: 16px;
+			padding: 0;
+			text-align: center;
+			width: 36px;
+
+			&:not(:last-child) {
+				margin-left: $spacing * 2;
+			}
+		}
+
+		.sheet-fieldset-item {
+			opacity: 0.25;
+		}
+	}
+
+	.sheet-fieldset-item {
+		display: flex;
+		flex-direction: column;
+		min-height: 18px;
+
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+}

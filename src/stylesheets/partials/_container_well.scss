@@ -1,0 +1,24 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-container-well {
+		min-height: 65px;
+		padding: 10px;
+		position: relative;
+		z-index: 0;
+
+		&::before {
+			border-image: url($img-well) 96 314 96 314 fill stretch;
+			border-style: solid;
+			border-width: 32px 101px;
+			box-sizing: border-box;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+		}
+	}
+}

@@ -1,0 +1,150 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-container-box {
+		display: flex;
+		flex-direction: column-reverse;
+		min-height: 65px;
+		position: relative;
+		z-index: 0;
+		min-width: 0;
+		overflow: hidden;
+
+		&::before {
+			border-image: url($img-box) 50 50 50 50 fill stretch;
+			border-style: solid;
+			border-width: 15px 15px;
+			box-sizing: border-box;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+		}
+
+		.sheet-container-header {
+			font-size: 8px;
+			font-weight: bold;
+			line-height: 1;
+			margin-left: 2px;
+			margin-right: 2px;
+			padding: 0 5px 5px;
+			text-align: center;
+			text-transform: uppercase;
+			min-height: 21px;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+
+			button {
+				background: none;
+				border: 0;
+				font-size: inherit;
+				font-weight: inherit;
+				line-height: inherit;
+				text-transform: inherit;
+				white-space: normal;
+
+				&:active {
+					box-shadow: none;
+				}
+			}
+
+			+ .sheet-container-body {
+				padding-bottom: 0;
+			}
+
+			select {
+				background: none;
+				border: 0;
+				cursor: pointer;
+				font-size: inherit;
+				font-weight: inherit;
+				line-height: inherit;
+				margin: 0;
+				padding: 0;
+				text-transform: inherit;
+				white-space: normal;
+				width: auto;
+
+				&:active {
+					box-shadow: none;
+				}
+			}
+		}
+
+		.sheet-container-body {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: row;
+			flex-grow: 1;
+			padding: 5px 10px 0;
+
+			[type="text"],
+			select {
+				border-color: rgba(white, 0);
+				flex-grow: 1;
+				line-height: 13px;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				width: 100%;
+				min-width: 0;
+				color: $font-color;
+			}
+
+			input,
+			span {
+				font-size: 24px;
+			}
+
+			span {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-grow: 1;
+			}
+
+			select {
+				cursor: pointer;
+				height: 100%;
+			}
+		}
+
+		.sheet-container-footer {
+			color: $box-footer-color;
+			font-size: 8px;
+			font-weight: bold;
+			line-height: 10px;
+			padding-top: 6px;
+			text-transform: uppercase;
+			box-sizing: border-box;
+			min-height: 21px;
+			margin-bottom: -5px;
+			text-align: center;
+		}
+
+		.sheet-form-inline {
+			border: 0;
+			margin-left: -5px;
+			margin-right: -5px;
+
+			&:not(:first-child) {
+				margin-top: 5px;
+			}
+
+			> .sheet-form-header {
+				background: #dddddd;
+				color: inherit;
+				font-size: 9px;
+				line-height: 14px;
+			}
+
+			> .sheet-form-body {
+				padding-bottom: 0;
+			}
+		}
+	}
+}

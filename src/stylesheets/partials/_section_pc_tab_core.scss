@@ -1,0 +1,1091 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-pc .sheet-tab-core {
+
+		> input[type="radio"]:checked ~ .sheet-tab-content {
+			display: grid;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"attributes trackers trackers"
+				"attributes health health"
+				"attributes attacks effects";
+			grid-template-columns: 265px 1fr 1fr;
+			grid-template-rows: 85px auto 1fr;
+		}
+
+		.sheet-container-well-attributes {
+			grid-area: attributes;
+			display: grid;
+			grid-template-columns: 75px auto;
+			grid-template-rows: 30px auto auto auto 1fr;
+			grid-template-areas:
+				"attributes proficiency-bonus"
+				"attributes saves"
+				"attributes skills"
+				"tools tools"
+				"proficiencies proficiencies";
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+
+			.sheet-pc-attributes {
+				grid-area: attributes;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			.sheet-pc-proficiency-bonus {
+				grid-area: proficiency-bonus;
+
+				.sheet-container-body {
+					width: 50px;
+				}
+			}
+
+			.sheet-pc-saves {
+				grid-area: saves;
+			}
+
+			.sheet-pc-saving-throw,
+			.sheet-pc-skill {
+				display: flex;
+				align-items: center;
+
+				&:not(:first-of-type) {
+					border-top: 1px dotted gainsboro;
+				}
+
+				.sheet-checkbox-image {
+					height: 10px;
+					width: 10px;
+
+					span {
+						padding: 1px;
+					}
+				}
+
+				input {
+					width: auto;
+					flex-grow: 0;
+					margin: 0;
+				}
+
+				span {
+					flex-grow: 0;
+					width: 20px;
+					text-align: center;
+					font-weight: bold;
+					font-size: 11px;
+				}
+
+				button {
+					flex-grow: 1;
+					text-align: left;
+					border: 0;
+					background: none;
+					box-shadow: none;
+					height: 18px;
+					font-size: 11px;
+					margin: 0;
+					padding: 0;
+					vertical-align: baseline;
+					color: inherit;
+
+					span {
+						font-weight: normal;
+						font-size: inherit;
+						width: auto;
+						opacity: .5;
+					}
+
+					&:hover {
+						background: $hover-bg;
+						margin-left: -3px;
+						padding-left: 3px;
+						color: #b61037;
+					}
+				}
+			}
+
+			.sheet-pc-skills {
+				grid-area: skills;
+			}
+
+			.sheet-pc-tools {
+				grid-area: tools;
+
+				.sheet-container-body-header {
+
+					span:nth-of-type(1) {
+						width: 45px;
+						flex-shrink: 0;
+						padding-left: 10px;
+						text-align: center;
+					}
+
+					span:nth-of-type(2) {
+						text-align: left;
+					}
+				}
+
+				.sheet-pc-tool {
+
+					button {
+						border: none;
+						background: none;
+						box-shadow: none;
+						font-size: 11px;
+						display: flex;
+						align-items: center;
+						width: 100%;
+						text-overflow: ellipsis;
+						overflow: hidden;
+
+						&:hover {
+							background: $hover-bg;
+						}
+
+						span:nth-of-type(1) {
+							border: 1px solid black;
+							border-radius: 100%;
+							width: 10px;
+							height: 10px;
+							display: inline-block;
+							flex-shrink: 0;
+							padding: 1px;
+							background: gainsboro;
+
+							&::after {
+								content: '';
+								display: block;
+								height: 100%;
+								width: 100%;
+								border-radius: 100%;
+								background: #353535;
+							}
+						}
+
+						span:nth-of-type(2) {
+							width: 25px;
+							font-weight: bold;
+							text-align: center;
+							flex-shrink: 0;
+							margin-left: 2px;
+						}
+
+						span:nth-of-type(3) {
+
+						}
+
+						span:nth-of-type(4) {
+							opacity: .5;
+							margin-left: 2px;
+
+							&::before {
+								content: '(';
+							}
+
+							&::after {
+								content: ')';
+							}
+						}
+					}
+				}
+			}
+
+			.sheet-pc-proficiencies {
+				grid-area: proficiencies;
+
+				.sheet-container-body-header {
+
+					span:first-of-type {
+						width: 65px;
+						margin-right: 5px;
+						flex-shrink: 0;
+						text-align: center;
+					}
+				}
+
+				.sheet-pc-proficiency {
+
+					button {
+						border: none;
+						background: none;
+						box-shadow: none;
+						font-size: 11px;
+						display: flex;
+						text-align: left;
+						width: 100%;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						align-items: stretch;
+
+						span:first-of-type {
+							margin-right: 5px;
+							width: 65px;
+							flex-shrink: 0;
+							font-size: 9px;
+							font-weight: bold;
+							display: flex;
+							text-shadow: none;
+							background: gainsboro;
+							justify-content: center;
+							border-radius: 3px;
+						}
+
+						span:last-of-type {
+							white-space: normal;
+							line-height: 13px;
+							padding: 2px 0;
+						}
+
+						&:hover {
+							background: $hover-bg;
+						}
+					}
+				}
+			}
+		}
+
+		.sheet-container-effects {
+			grid-area: effects;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.sheet-pc-effects {
+			flex-grow: 1;
+			font-size: 11px;
+
+			.sheet-container-body-header {
+
+				span:first-of-type {
+					text-align: center;
+					width: 10px;
+					flex-shrink: 0;
+					margin-right: 5px;
+				}
+			}
+
+			.sheet-pc-effect {
+				display: flex;
+				align-items: center;
+
+				.sheet-checkbox-image {
+					height: 10px;
+					width: 10px;
+					margin-right: 5px;
+					flex-shrink: 0;
+					align-self: flex-start;
+					margin-top: 4px;
+
+					span {
+						padding: 1px;
+					}
+				}
+
+				> :last-child {
+					line-height: 12px;
+					padding: 3px 0;
+				}
+			}
+		}
+
+		.sheet-grouping-pc-health-conditions {
+			grid-area: health;
+		}
+
+		.sheet-container-well-effects {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			grid-area: effects;
+
+			.sheet-pc-exhaustion-details {
+				margin-bottom: 5px;
+
+				label {
+					cursor: pointer;
+					margin: 0;
+				}
+
+				ul {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}
+
+				.sheet-pc-exhaustion-dot {
+					background: white;
+					border-radius: 100%;
+					border: 1px solid #272727;
+					display: inline-block;
+					height: 8px;
+					margin-right: 4px;
+					position: relative;
+					width: 8px;
+				}
+
+				li {
+
+					+ li {
+						margin-top: 2px;
+					}
+
+					[type=radio] {
+						display: none;
+					}
+
+					span {
+						border-radius: 4px;
+						display: flex;
+						font-size: 11px;
+						line-height: 8px;
+						padding: 2px 3px;
+
+						strong {
+							margin-right: 3px;
+						}
+					}
+				}
+
+				.sheet-radio span:hover {
+					position: relative;
+
+					&::before {
+						content: '';
+						height: 100%;
+						width: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						background: $hover-bg;
+						z-index: -1;
+					}
+				}
+
+				li input[type=radio]:checked + span {
+					position: relative;
+
+					&::after {
+						background: #b4cf01;
+						border-radius: 5px;
+						bottom: 0;
+						content: '';
+						height: 26px;
+						left: 0;
+						position: absolute;
+						width: 100%;
+						z-index: -1;
+					}
+
+					.sheet-pc-exhaustion-dot {
+						background: #8c8c8c;
+					}
+				}
+
+				li:nth-of-type(1) input[type=radio]:checked + span::after {
+					display: none;
+				}
+
+				li:not(:nth-of-type(1)) input[type=radio]:checked + span {
+					color: white;
+				}
+
+				li:nth-of-type(2) input[type=radio]:checked + span::after {
+					background: #b4cf01;
+					height: 12px;
+				}
+
+				li:nth-of-type(3) input[type=radio]:checked + span::after {
+					background: #b4cf01;
+					height: 26px;
+				}
+
+				li:nth-of-type(4) input[type=radio]:checked + span::after {
+					background: #cfb401;
+					height: 40px;
+				}
+
+				li:nth-of-type(5) input[type=radio]:checked + span::after {
+					background: #cf7d01;
+					height: 54px;
+				}
+
+				li:nth-of-type(6) input[type=radio]:checked + span::after {
+					background: #cf4601;
+					height: 68px;
+				}
+
+				li:nth-of-type(7) input[type=radio]:checked + span::after {
+					background: #cf0101;
+					height: 82px;
+				}
+			}
+		}
+
+		.sheet-container-well-trackers {
+			grid-area: trackers;
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			grid-template-rows: 30px 30px;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+			"armor initiative perception speed fate fate"
+			"armor initiative perception speed inspiration inspiration";
+
+			.sheet-pc-armor {
+				grid-area: armor;
+			}
+
+			.sheet-pc-initiative {
+				grid-area: initiative;
+			}
+
+			.sheet-pc-perception {
+				grid-area: perception;
+			}
+
+			.sheet-pc-speed {
+				grid-area: speed;
+			}
+
+			.sheet-pc-xp {
+				grid-area: xp;
+				display: none;
+
+				.sheet-container-body {
+					width: 152px;
+				}
+			}
+
+			.sheet-pc-training {
+				grid-area: training;
+				display: none;
+			}
+
+			.sheet-pc-fate {
+				grid-area: fate;
+			}
+
+			.sheet-pc-inspiration {
+				grid-area: inspiration;
+			}
+		}
+
+		.sheet-container-well-health {
+			display: grid;
+			grid-area: health;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+			"hp-max hp hp health wounds wounds"
+			"hit-dice hit-dice death health wounds wounds";
+			grid-template-columns: repeat(6, 1fr);
+			grid-template-rows: 65px auto;
+
+			.sheet-pc-hp-max {
+				grid-area: hp-max;
+
+				.sheet-container-body {
+					padding-top: 0;
+				}
+			}
+
+			.sheet-pc-hp-current {
+				grid-area: hp;
+
+				.sheet-container-body {
+					display: flex;
+					flex-direction: row;
+					padding-top: 0;
+				}
+
+				.sheet-container-footer {
+					display: flex;
+					padding-left: 10px;
+					padding-right: 10px;
+
+					span {
+						flex-grow: 1;
+						text-align: center;
+						width: 100%;
+					}
+				}
+			}
+
+			.sheet-pc-hit-dice {
+				grid-area: hit-dice;
+				max-height: 65px;
+
+				.sheet-container-body {
+					display: flex;
+					flex-direction: row;
+					padding-top: 0;
+
+					span {
+						align-items: center;
+						color: #dddddd;
+						display: flex;
+						font-size: 24px;
+						justify-content: center;
+					}
+				}
+
+				.sheet-container-footer {
+					display: flex;
+					padding-left: 10px;
+					padding-right: 10px;
+
+					span {
+						flex-grow: 1;
+						text-align: center;
+						width: 100%;
+					}
+				}
+			}
+
+			.sheet-pc-death {
+				grid-area: death;
+				max-height: 65px;
+
+				.sheet-container-body {
+					align-items: center;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+
+				.sheet-death-save-success,
+				.sheet-death-save-fail {
+					display: flex;
+
+					> span {
+						color: #c9c8bf;
+						font-size: 14px !important;
+						font-weight: bold;
+						line-height: 14px;
+						margin-right: 3px;
+						width: 14px;
+					}
+
+					+ * {
+						margin-top: 3px;
+					}
+				}
+			}
+
+			.sheet-pc-health {
+				grid-area: health;
+				max-height: 135px;
+			}
+
+			.sheet-pc-wounds {
+				grid-area: wounds;
+
+				.sheet-container-body-header {
+
+					span:first-of-type {
+						width: 15px;
+						flex-shrink: 0;
+					}
+				}
+
+				.sheet-pc-wound {
+					font-size: 11px;
+					display: flex;
+					align-items: center;
+					white-space: nowrap;
+					padding-right: 20px;
+
+					> span {
+						overflow: hidden;
+						text-overflow: ellipsis;
+					}
+
+					.sheet-checkbox-image {
+						width: 10px;
+						height: 10px;
+						margin-right: 5px;
+						flex-shrink: 0;
+
+						span {
+							padding: 1px;
+						}
+					}
+				}
+			}
+		}
+
+
+		.sheet-container-well-conditions {
+			display: grid;
+			grid-area: conditions;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"conditions conditions conditions conditions rations rations"
+				"conditions conditions conditions conditions water water"
+				"conditions conditions conditions conditions exhaustion exhaustion";
+			grid-template-columns: repeat(6, 1fr);
+			grid-template-rows: 30px 30px 65px;
+			margin-top: 5px;
+
+			.sheet-pc-conditions {
+				grid-area: conditions;
+
+				.sheet-container-header {
+					display: grid;
+					grid-column-gap: 5px;
+					grid-template-columns: repeat(4, 1fr);
+					margin: 0;
+					padding-left: 10px;
+					padding-right: 10px;
+
+					span {
+						text-align: center;
+						width: 100%;
+					}
+				}
+
+				.sheet-container-body {
+					display: grid;
+					grid-column-gap: 5px;
+					grid-template-columns: repeat(4, 1fr);
+					height: 100%;
+
+					.sheet-list-conditions {
+						display: flex;
+						justify-content: space-between;
+					}
+				}
+			}
+
+			.sheet-pc-rations {
+				grid-area: rations;
+			}
+
+			.sheet-pc-water {
+				grid-area: water;
+			}
+
+			.sheet-pc-exhaustion {
+				grid-area: exhaustion;
+
+				.sheet-container-body {
+					display: flex;
+					flex-direction: row;
+					padding-top: 0;
+
+					span {
+						align-items: center;
+						display: flex;
+						justify-content: center;
+						width: 100%;
+
+						&:nth-of-type(1),
+						&:nth-of-type(2) {
+							font-size: 18px;
+						}
+
+						&:nth-of-type(3) {
+							border-radius: 100%;
+							background: #eeeeee;
+						}
+					}
+				}
+
+				.sheet-container-footer {
+					display: flex;
+					padding-left: 10px;
+					padding-right: 10px;
+
+					span {
+						flex-grow: 1;
+						text-align: center;
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.sheet-container-well-stress {
+			grid-area: stress;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 65px 1fr;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"pc-stress levels levels"
+				"afflictions afflictions afflictions";
+			min-height: 85px;
+			margin-bottom: 5px;
+
+			.sheet-pc-stress {
+				grid-area: pc-stress;
+			}
+
+			.sheet-pc-stress-levels {
+				grid-area: levels;
+
+				.sheet-container-body {
+					justify-content: center;
+				}
+
+				[type=checkbox] {
+					display: none;
+				}
+
+				ul {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+					column-count: 2;
+					column-gap: 5px;
+					column-rule: 1px solid gainsboro;
+
+					li:nth-of-type(2),
+					li:nth-of-type(4) {
+						margin-top: 2px;
+					}
+
+					label {
+						font-size: 11px;
+						cursor: pointer;
+					}
+
+					span {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border-radius: 3px;
+
+						strong {
+							margin-right: 2px;
+						}
+
+						&:hover {
+							background: $hover-bg;
+						}
+					}
+				}
+
+				li:nth-of-type(1) input[type=checkbox]:checked + span {
+					background: #cfb401;
+					color: white;
+				}
+
+				li:nth-of-type(3) input[type=checkbox]:checked + span {
+					background: #cf7d01;
+					color: white;
+				}
+
+				li:nth-of-type(2) input[type=checkbox]:checked + span {
+					background: #cf4601;
+					color: white;
+				}
+
+				li:nth-of-type(4) input[type=checkbox]:checked + span {
+					background: #cf0101;
+					color: white;
+				}
+
+				li:nth-of-type(4) span {
+					letter-spacing: -0.75px;
+				}
+			}
+
+			.sheet-pc-afflictions {
+				grid-area: afflictions;
+
+				.sheet-container-body-header {
+
+					span:first-of-type {
+						width: 75px;
+						flex-shrink: 0;
+						text-align: center;
+					}
+				}
+
+				.sheet-pc-affliction {
+					font-size: 11px;
+					line-height: 1.3;
+					padding: 3px 0;
+				}
+			}
+		}
+
+		.sheet-container-well-exhaustion {
+			grid-area: exhaustion;
+		}
+
+		.sheet-container-well-attacks {
+			display: grid;
+			grid-area: attacks;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+				"spell-ability spell-dc spell-attack"
+				"resource-class resource-other spell-burnout"
+				"resources resources resources"
+				"attacks attacks attacks";
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: 65px 65px auto 1fr;
+
+			.sheet-pc-spell-ability {
+				grid-area: spell-ability;
+			}
+
+			.sheet-pc-spell-dc {
+				grid-area: spell-dc;
+
+				.sheet-container-header {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
+
+			.sheet-pc-spell-attack {
+				grid-area: spell-attack;
+			}
+
+			.sheet-pc-resource-class {
+				grid-area: resource-class;
+			}
+
+			.sheet-pc-resource-other {
+				grid-area: resource-other;
+			}
+
+			.sheet-pc-resources {
+				grid-area: resources;
+
+				.sheet-pc-resource {
+					font-size: 11px;
+
+					span:nth-of-type(2) {
+						opacity: .5;
+
+						&::before {
+							content: "(";
+						}
+
+						&::after {
+							content: " /";
+						}
+					}
+
+					span:nth-of-type(3) {
+						opacity: .5;
+
+						&::after {
+							content: ")";
+						}
+					}
+				}
+			}
+
+			.sheet-pc-resource-class,
+			.sheet-pc-resource-other {
+
+				.sheet-container-header {
+					position: relative;
+
+					input {
+						background: none;
+						border: 0;
+						bottom: 0;
+						font-size: inherit;
+						font-weight: inherit;
+						height: 100%;
+						left: 0;
+						opacity: 0;
+						position: absolute;
+						text-align: center;
+						text-transform: uppercase;
+						width: 100%;
+
+						&:focus {
+							height: 18px;
+							opacity: 1;
+
+							+ span {
+								opacity: 0;
+							}
+						}
+					}
+				}
+
+				.sheet-container-body {
+					flex-direction: row;
+
+					input {
+						padding: 0;
+						font-size: 14px;
+					}
+
+					span {
+						align-items: center;
+						color: #dddddd;
+						display: flex;
+						font-size: 24px;
+						justify-content: center;
+					}
+				}
+			}
+
+			.sheet-pc-spell-burnout {
+				grid-area: spell-burnout;
+			}
+
+			.sheet-pc-attacks {
+				grid-area: attacks;
+
+				.sheet-pc-attack button {
+					background: none;
+					border: none;
+					box-shadow: none;
+					display: flex;
+					font-size: 11px;
+					padding-right: 18px;
+					padding: 0;
+					width: 100%;
+
+					&:hover {
+						background: $hover-bg;
+					}
+
+					span {
+						overflow: hidden;
+						text-overflow: ellipsis;
+						width: 100%;
+
+						&:first-of-type {
+							text-align: left;
+					    text-shadow: none;
+					    text-align: center;
+					    font-weight: bold;
+					    font-size: 9px;
+					    border-radius: 3px;
+							background: gainsboro;
+						}
+
+						&:nth-of-type(2) {
+							width: 40%;
+							text-align: center;
+							margin-right: 5px;
+							font-weight: bold;
+							border-right: 1px solid gainsboro;
+						}
+
+						&:last-of-type {
+							text-align: center;
+							width: 80%;
+						}
+					}
+				}
+			}
+		}
+
+		.sheet-pc-saving-throw-modifier,
+		.sheet-pc-tool-modifier,
+		.sheet-pc-attack-modifier,
+		.sheet-pc-attack-damage-modifier,
+		.sheet-pc-ac-modifier, {
+			align-items: center;
+			display: flex;
+
+			.sheet-checkbox-image {
+				height: 10px;
+				margin-right: 5px;
+				width: 10px;
+
+				span {
+					padding: 1px;
+				}
+			}
+
+			> span {
+				font-size: 11px;
+
+				+ span {
+					margin-left: 5px;
+					opacity: .5;
+
+					&::before {
+						content: "(";
+					}
+
+					&::after {
+						content: ")";
+					}
+				}
+			}
+		}
+	}
+
+	.sheet-list-conditions {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		justify-content: space-between;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		.sheet-radio {
+			align-items: center;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			line-height: 14px;
+			text-align: center;
+
+			span {
+				border-radius: 4px;
+				flex-grow: 1;
+				font-size: 11px;
+
+				&:hover {
+					background: $hover-bg;
+				}
+			}
+
+			input {
+				display: none;
+			}
+
+			input[type=radio]:checked + span {
+				background: #cf0101;
+				color: white;
+			}
+		}
+
+		li:nth-of-type(1) input[type=radio]:checked + span {
+			background: #46cf01;
+		}
+
+		li:nth-of-type(2) input[type=radio]:checked + span {
+			background: #7dcf01;
+		}
+
+		li:nth-of-type(3) input[type=radio]:checked + span {
+			background: #b4cf01;
+		}
+
+		li:nth-of-type(4) input[type=radio]:checked + span {
+			background: #cfb401;
+		}
+
+		li:nth-of-type(5) input[type=radio]:checked + span {
+			background: #cf7d01;
+		}
+
+		li:nth-of-type(6) input[type=radio]:checked + span {
+			background: #cf4601;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+// Styles for sheet buttons.
+
+.charsheet .sheet-darkerdungeons {
+
+	button[type=roll] {
+		color: inherit;
+		font-size: inherit;
+		margin: 0;
+		padding: 0;
+		vertical-align: baseline;
+
+		&:hover {
+			color: $button-roll-hover-color;
+		}
+
+		&:focus {
+			color: $button-roll-hover-color;
+			outline: none;
+		}
+
+		&::before {
+			display: none;
+		}
+	}
+}

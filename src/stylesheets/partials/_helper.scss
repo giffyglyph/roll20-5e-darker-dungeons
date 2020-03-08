@@ -1,0 +1,30 @@
+// Styles for common sheet helpers.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-hidden {
+		display: none !important;
+	}
+
+	.sheet-display-brackets {
+
+		&::after {
+			content: ")";
+		}
+
+		&::before {
+			content: "(";
+		}
+	}
+
+	.sheet-display-brackets-xp {
+
+		&::after {
+			content: " XP)";
+		}
+
+		&::before {
+			content: "(";
+		}
+	}
+}

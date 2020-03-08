@@ -1,0 +1,53 @@
+// Styles for sheet checkboxes.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-checkbox-image {
+		height: 14px;
+		overflow: hidden;
+		position: relative;
+		width: 14px;
+
+		[type=checkbox] {
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+
+			&:hover ~ span,
+			&:focus ~ span {
+				background: $hover-bg;
+			}
+
+			&:checked ~ span {
+				background: gainsboro;
+
+				&::after {
+					content: '';
+					display: block;
+					height: 100%;
+					width: 100%;
+					border-radius: 100%;
+					background: $checkbox-bg;
+				}
+			}
+		}
+
+		span {
+			overflow: hidden;
+			padding: 2px;
+			background: white;
+			border-radius: 100%;
+			border: 1px solid $checkbox-border;
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100% !important;
+		}
+	}
+}

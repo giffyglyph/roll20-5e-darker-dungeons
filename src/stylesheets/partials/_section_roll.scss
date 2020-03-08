@@ -1,0 +1,86 @@
+// Styles for the roll options.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-roll {
+		margin: 0 auto;
+    width: 800px;
+		display: flex;
+		justify-content: flex-end;
+		margin-bottom: -18px;
+		height: 18px;
+	}
+
+	.sheet-section-roll-advantage,
+	.sheet-section-roll-whisper {
+		display: none;
+
+		label {
+			position: relative;
+
+			&:first-of-type span {
+				border-radius: 4px 0 0 4px;
+				border-left: 1px solid #b7b7b7;
+			}
+
+			&:last-of-type span {
+				border-radius: 0 4px 4px 0;
+			}
+
+			span {
+				background: #dddddd;
+				padding: 1px 5px;
+		    font-weight: bold;
+		    border: 1px solid #b7b7b7;
+				border-left: 0;
+		    color: #909090;
+			}
+
+			input {
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				opacity: 0;
+
+				&:checked ~ span {
+					background: #7e2d40;
+					color: white;
+					border-color: #7e2d40;
+				}
+
+				&:not(:checked):hover ~ span {
+					color: black;
+				}
+			}
+		}
+	}
+
+	.sheet-roll-toggle[value*="advantagetoggle"] + .sheet-section-roll-advantage,
+	.sheet-roll-toggle[value*="whispertoggle"] + .sheet-section-roll-whisper {
+		display: flex;
+	}
+
+	.sheet-section-roll-whisper {
+		margin-left: 3px;
+	}
+
+	.sheet-toggle-npc {
+
+		&:not([value="0"]) {
+
+			~ .sheet-section-roll {
+		    width: 385px;
+				justify-content: space-between;
+				margin-bottom: 0;
+				height: auto;
+
+				.sheet-section-roll-advantage,
+				.sheet-section-roll-whisper {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

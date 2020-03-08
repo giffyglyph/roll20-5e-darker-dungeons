@@ -1,0 +1,121 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-pc .sheet-tab-options {
+
+		> input[type="radio"]:checked ~ .sheet-tab-content {
+			display: grid;
+			grid-row-gap: 5px;
+			grid-template-rows: auto;
+		}
+
+		.sheet-pc-options {
+			display: grid;
+			grid-column-gap: 5px;
+			grid-row-gap: 5px;
+			grid-template-areas:
+			"class multiclass custom"
+			"class spell custom"
+			"general attribute skill"
+			"general save skill"
+			"darker save skill";
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: auto auto auto auto 1fr;
+		}
+
+		.sheet-pc-option-class {
+			grid-area: class;
+		}
+
+		.sheet-pc-option-gdd {
+			grid-area: darker;
+		}
+
+		.sheet-pc-option-multiclass {
+			grid-area: multiclass;
+		}
+
+		.sheet-pc-option-spell {
+			grid-area: spell;
+
+			.sheet-form-body {
+				display: grid;
+				grid-column-gap: 10px;
+				grid-row-gap: 5px;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+				grid-auto-flow: column;
+
+				> .sheet-form-group {
+					margin: 0;
+				}
+			}
+		}
+
+		.sheet-pc-option-class-custom {
+			grid-area: custom;
+
+			.sheet-form-fieldset-body {
+				display: grid;
+				grid-column-gap: 10px;
+				grid-row-gap: 5px;
+				grid-template-columns: 1fr 1fr;
+
+				> .sheet-form-group {
+					margin: 0;
+				}
+			}
+		}
+
+		.sheet-pc-option-general {
+			grid-area: general;
+		}
+
+		.sheet-pc-option-attribute {
+			grid-area: attribute;
+		}
+
+		.sheet-pc-option-save {
+			grid-area: save;
+		}
+
+		.sheet-pc-option-skill {
+			grid-area: skill;
+
+			label:not(.sheet-form-checkbox) span {
+				opacity: .5;
+			}
+
+			select {
+				width: 75px;
+				flex-shrink: 0;
+			}
+		}
+
+		.sheet-pc-options {
+
+			label {
+				color: black;
+				font-size: 11px;
+				font-weight: normal;
+				text-transform: none;
+			}
+
+			.sheet-form-fieldset {
+				border-color: lightgrey;
+
+				.sheet-form-fieldset-header {
+					background-color: lightgrey;
+					color: inherit;
+				}
+			}
+		}
+
+		.sheet-form-fieldset-custom-ac {
+			margin-top: 5px;
+		}
+
+		.sheet-form-fieldset-hp-modifiers .repitem + .repitem {
+			margin-top: 5px;
+		}
+	}
+}

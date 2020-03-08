@@ -1,0 +1,50 @@
+<rolltemplate class="sheet-rolltemplate-spell">
+	<div class="container">
+		<div class="title row">
+			<span>{{name}}</span>{{#innate}}<span class="grey">, {{innate}}</span>{{/innate}}
+		</div>
+		<div class="italics row">
+			<span>{{level}}{{#ritual}} (<span></span>){{/ritual}}</span>
+		</div>
+		<div class="spacer"></div>
+		{{#castingtime}}
+		<div class="row">
+			<span class="bold">Casting Time:</span> <span>{{castingtime}}</span>
+		</div>
+		{{/castingtime}}
+		{{#range}}
+		<div class="row">
+			<span class="bold">Range:</span> <span>{{range}}</span>
+		</div>
+		{{/range}}
+		{{#target}}
+		<div class="row">
+			<span class="bold">Target:</span> <span>{{target}}</span>
+		</div>
+		{{/target}}
+		<div class="row">
+			<span class="bold">Components:</span>
+			<span>
+				{{#v}}V{{#s}}, {{/s}}{{^s}}{{#m}}, {{/m}}{{/s}}{{/v}}
+				{{#s}}S{{#m}}, {{/m}}{{/s}}
+				{{#m}}M {{#material}}({{material}}){{/material}}{{/m}}
+			</span>
+		</div>
+		{{#duration}}
+		<div class="row">
+			<span class="bold">Duration:</span> <span>{{#concentration}}<span>Concentration</span> {{/concentration}}{{duration}}</span>
+		</div>
+		{{/duration}}
+		<div class="spacer"></div>
+		{{#description}}
+		<div class="row">
+			<span class="description">{{description}}</span>
+		</div>
+		{{/description}}
+		{{#athigherlevels}}
+		<div class="row">
+			<span class="bold italics">At Higher Levels</span>. <span class="description">{{athigherlevels}}</span>
+		</div>
+		{{/athigherlevels}}
+	</div>
+</rolltemplate>

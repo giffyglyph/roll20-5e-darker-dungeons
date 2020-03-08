@@ -1,0 +1,113 @@
+// Styles for the PC header.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-pc {
+
+		.sheet-section-pc-header {
+			background: url($img-header);
+			background-size: 100% 100%;
+			display: grid;
+			grid-template-areas:
+			". logo . . ."
+			". logo . details ."
+			". name . details ."
+			". . . . .";
+			grid-template-columns: 18px 289px 38px auto 18px;
+			grid-template-rows: 40px 33px 46px auto;
+			height: 141px;
+			margin-bottom: $spacing;
+
+			.sheet-section-pc-header-name {
+				display: flex;
+				grid-area: name;
+				padding: 5px 15px;
+
+				input {
+					flex-grow: 1;
+					border: 0;
+					color: #212121;
+					font-size: 20px;
+					font-weight: bold;
+					margin: 0;
+					padding: 0;
+					text-align: center;
+				}
+			}
+
+			.sheet-section-pc-header-details {
+				grid-area: details;
+				overflow: hidden;
+				padding: 5px 35px;
+				position: relative;
+
+				.sheet-form {
+					height: 70px;
+				}
+
+				.sheet-toggle-unchecked {
+					height: 100%;
+				}
+
+				.sheet-form-body {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					padding: ($spacing / 2) $spacing;
+				}
+
+				.sheet-checkbox-cog {
+					right: 35px;
+				}
+
+				.sheet-section-pc-header-details-panel {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: 1fr 1fr;
+					grid-column-gap: $spacing * 2;
+					height: 100%;
+
+					div {
+						display: flex;
+						flex-direction: column-reverse;
+
+						input {
+							border-left: 0;
+							border-right: 0;
+							border-top: 0;
+							border-bottom: 1px solid black;
+							border-radius: 0;
+							height: 19px;
+							padding: 0;
+							width: 100%;
+							border-color: $input-border;
+						}
+
+						label {
+							font-size: $font-size-xs;
+							text-transform: uppercase;
+							font-weight: bold;
+							line-height: 1.5;
+							color: $input-border;
+						}
+					}
+				}
+			}
+
+			.sheet-section-pc-header-logo {
+				grid-area: logo;
+				padding: 15px 15px 6px;
+				text-align: center;
+
+				div {
+					background: url($img-header-logo);
+					width: 219.84px;
+					height: 52px;
+					display: block;
+					background-size: 100%;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+// Styles for npc pages.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-section-npc {
+		margin: 0 auto;
+		max-width: $width-npc;
+		position: relative;
+
+		.sheet-section-npc-footer p {
+			color: #cccccc;
+			font-size: 9px;
+			margin: 3px 0 0;
+			text-align: center;
+
+			a {
+				color: inherit;
+
+				&:hover {
+					text-decoration: none;
+					background: $hover-bg;
+				}
+			}
+		}
+	}
+}

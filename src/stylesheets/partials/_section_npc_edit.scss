@@ -1,0 +1,40 @@
+// Styles for npc edit page.
+
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-form-fieldset-npc-attributes,
+	.sheet-form-fieldset-npc-saves {
+
+		.sheet-form-fieldset-body {
+			display: grid;
+			grid-column-gap: $spacing * 2;
+			grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+			.sheet-form-group {
+				align-items: center;
+				margin: 0;
+
+				input {
+					margin: 0;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.sheet-form-fieldset-npc-skills {
+
+		.sheet-form-fieldset-body {
+			display: grid;
+			grid-auto-flow: column;
+			grid-column-gap: $spacing * 2;
+			grid-row-gap: $spacing / 2;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+			.sheet-form-group {
+				margin: 0;
+			}
+		}
+	}
+}

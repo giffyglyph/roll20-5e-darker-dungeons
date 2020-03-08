@@ -1,0 +1,72 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-container-bar {
+		display: flex;
+		height: 30px;
+		position: relative;
+		z-index: 0;
+
+		&::before {
+			border-image: url($img-bar) 103 103 103 103 fill stretch;
+			border-style: solid;
+			border-width: 30px 30px 0;
+			box-sizing: border-box;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+		}
+
+		&.sheet-container-bar-left {
+			flex-direction: row-reverse;
+
+			.sheet-container-header::after {
+				left: -12px;
+				right: auto;
+				transform: scaleX(-1);
+			}
+		}
+
+		.sheet-container-header {
+			align-items: center;
+			align-self: stretch;
+			display: flex;
+			flex-grow: 1;
+			font-size: 8px;
+			font-weight: bold;
+			justify-content: center;
+			position: relative;
+			text-transform: uppercase;
+			vertical-align: middle;
+
+			&::after {
+				background: url($img-bar-spacer);
+				background-size: 100% 100%;
+				content: '';
+				display: inline-block;
+				height: 30px;
+				position: absolute;
+				right: -14px;
+				width: 19px;
+			}
+		}
+
+		.sheet-container-body {
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			padding: 0 10px 0 12px;
+			text-align: center;
+
+			[type="text"] {
+				border: 0;
+				text-align: center;
+				width: 100%;
+			}
+		}
+	}
+}

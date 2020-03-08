@@ -1,0 +1,93 @@
+<rolltemplate class="sheet-rolltemplate-dmg">
+	{{#save}}
+		<div class="{{#attack}}desc{{/attack}}{{^attack}}atk{{/attack}} save">
+			<div class="savedc">
+				<span class="rolltemplate-inline">DC</span><span class="rolltemplate-inline">{{savedc}}</span>
+			</div>
+			{{#savedesc}}
+				<div class="sublabel">
+					<span>{{savedesc}}</span>
+				</div>
+			{{/savedesc}}
+			<div class="label">
+				<span class="rolltemplate-inline">{{saveattr}}</span> <span class="rolltemplate-inline">Save</span>
+			</div>
+		</div>
+	{{/save}}
+	{{^attack}}
+		{{#desc}}
+			<div class="desc info">
+				<span>
+					<span class="top"></span><span class="middle">{{desc}}</span><span class="bottom"></span>
+				</span>
+			</div>
+		{{/desc}}
+	{{/attack}}
+	{{#globaldamage}}
+		{{#^rollTotal() globaldamage 0}}
+			<div class="desc">
+				<span>{{globaldamage}}{{#globaldamagecrit}}<span class="plus"> + </span>{{globaldamagecrit}}{{/globaldamagecrit}}</span>
+				<span class="sublabel">{{globaldamagetype}}</span>
+			</div>
+		{{/^rollTotal() globaldamage 0}}
+	{{/globaldamage}}
+	{{#hldmg}}
+		{{#^rollTotal() hldmg 0}}
+			<div class="desc">
+				<span>{{hldmg}}{{#hldmgcrit}}<span class="plus"> + </span>{{hldmgcrit}}{{/hldmgcrit}}</span>
+				<span class="sublabel">{{dmg1type}}</span>
+				<div class="label">
+					<span>Higher Level Cast</span>
+				</div>
+			</div>
+		{{/^rollTotal() hldmg 0}}
+	{{/hldmg}}
+	<div class="container damagetemplate">
+		<div class="result">
+			{{#dmg1flag}}
+				{{^dmg2flag}}
+					<div class="solo">
+						<span class="damage">{{dmg1}}{{#crit}} + {{crit1}}{{/crit}}</span>
+						<span class="sublabel">{{dmg1type}}</span>
+					</div>
+				{{/dmg2flag}}
+			{{/dmg1flag}}
+			{{#dmg2flag}}
+				{{^dmg1flag}}
+					<div class="solo">
+						<span class="damage">{{dmg2}}{{#crit}} + {{crit2}}{{/crit}}</span>
+						<span class="sublabel">{{dmg2type}}</span>
+					</div>
+				{{/dmg1flag}}
+			{{/dmg2flag}}
+			{{#dmg1flag}}
+				{{#dmg2flag}}
+					<div class="adv">
+						<span class="damage">{{dmg1}}{{#crit}} + {{crit1}}{{/crit}}</span>
+						<span class="sublabel">{{dmg1type}}</span>
+					</div>
+					<div class="advspacer"></div>
+					<div class="adv">
+						<span class="damage">{{dmg2}}{{#crit}} + {{crit2}}{{/crit}}</span>
+						<span class="sublabel">{{dmg2type}}</span>
+					</div>
+				{{/dmg2flag}}
+			{{/dmg1flag}}
+		</div>
+		{{^attack}}
+			{{#range}}
+				<div class="sublabel" style="color: black;">
+					<span>{{range}}</span>
+				</div>
+			{{/range}}
+			<div class="label">
+				<span>{{rname}}</span>{{#innate}}<span class="grey">, {{innate}}</span>{{/innate}}
+			</div>
+			{{#charname}}
+				<div class="charname">
+					<span>{{charname}}</span>
+				</div>
+			{{/charname}}
+		{{/attack}}
+	</div>
+</rolltemplate>

@@ -1,0 +1,120 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-checkbox-cog {
+		display: inline-block;
+		height: 18px;
+		position: absolute;
+		right: 0;
+		width: 18px;
+
+		input {
+			height: 100%;
+			margin: 0;
+			opacity: 0;
+			position: relative;
+			width: 100%;
+			z-index: 1;
+
+			&:checked ~ span {
+				border: none;
+				color: inherit;
+				opacity: .25;
+				top: -2px;
+
+				&::before {
+					content: '2';
+					color: white;
+				}
+			}
+		}
+
+		&:hover span {
+			color: black;
+		}
+
+		&:hover input:checked ~ span {
+			opacity: 1;
+		}
+
+		span {
+			align-items: center;
+			border-radius: 50%;
+			box-sizing: border-box;
+			color: #cccccc;
+			display: flex;
+			font-family: 'Pictos';
+			font-size: 13px;
+			height: 100%;
+			justify-content: center;
+			left: 0;
+			opacity: .25;
+			position: absolute;
+			top: 0;
+			width: 100%;
+
+			&::before {
+				content: 'y';
+			}
+		}
+	}
+
+	.sheet-toggle {
+
+		~ .sheet-toggle-checked {
+			display: none;
+		}
+
+		~ .sheet-toggle-unchecked {
+			display: block;
+			width: 100%;
+		}
+
+		&:checked {
+
+			~ .sheet-toggle-checked {
+				display: block;
+				width: 100%;
+			}
+
+			~ .sheet-toggle-unchecked {
+				display: none;
+			}
+		}
+	}
+
+	.sheet-toggle-npc {
+
+		&[value="0"] {
+
+			~ .sheet-section-npc {
+				display: none;
+			}
+
+			~ .sheet-section-pc {
+				display: block;
+			}
+		}
+
+		&:not([value="0"]) {
+
+			~ .sheet-section-npc {
+				display: block;
+			}
+
+			~ .sheet-section-pc {
+				display: none;
+			}
+		}
+	}
+
+	.sheet-field-toggle:not([value]) + *,
+	.sheet-field-toggle[value=""] + *,
+	.sheet-field-toggle[value="0"] + *,
+	.sheet-field-toggle[value="hide"] + * {
+		display: none !important;
+	}
+
+	.sheet-field-untoggle[value="1"] + * {
+		display: none !important;
+	}
+}

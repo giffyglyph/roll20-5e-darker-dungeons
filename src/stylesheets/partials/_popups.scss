@@ -1,0 +1,59 @@
+.sheet-compendium-warning,
+.sheet-monster-confirm {
+    display: none;
+    position: absolute;
+    top: 50%;
+    background: white;
+    left: 50%;
+    z-index: 100;
+    border: 2px solid black;
+    width: 300px;
+		box-sizing: border-box;
+    text-align: center;
+    margin: 0 0 0 -150px;
+		padding: 30px;
+		text-transform: uppercase;
+		font-weight: bold;
+		box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.sheet-compendium-warning {
+	margin-top: -41px;
+}
+
+.sheet-monster-confirm {
+	margin-top: -75px;
+
+	.sheet-monster-confirm-buttons {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 20px;
+
+		.sheet-monster-confirm-button {
+			position: relative;
+			border: 1px solid black;
+			border-radius: 3px;
+			width: 100%;
+			padding: 5px;
+
+			+ .sheet-monster-confirm-button {
+				margin-left: 10px;
+			}
+
+			input {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				left: 0;
+				top: 0;
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.sheet-licensecontainer.active-drop-target.dropping .sheet-compendium-warning,
+.sheet-monster_confirm_flag[value="1"] .sheet-licensecontainer .sheet-monster-confirm {
+	display: block;
+}

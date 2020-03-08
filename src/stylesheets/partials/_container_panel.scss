@@ -1,0 +1,86 @@
+.charsheet .sheet-darkerdungeons {
+
+	.sheet-container-panel {
+		display: flex;
+		flex-direction: column;
+		min-height: 65px;
+		min-width: 0;
+		position: relative;
+		z-index: 0;
+
+		&::before {
+			border-image: url($img-panel) 50 50 50 50 fill stretch;
+			border-style: solid;
+			border-width: 15px 15px;
+			box-sizing: border-box;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: -1;
+		}
+
+		.sheet-container-header {
+			border-bottom: 2px solid #202020;
+			color: #202020;
+			font-size: 8px;
+			font-weight: bold;
+			line-height: 14px;
+			margin-left: 2px;
+			margin-right: 2px;
+			padding-top: 4px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.sheet-container-body {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			margin-bottom: 2px;
+			overflow: hidden;
+			padding: 5px 10px;
+
+			.sheet-container-body-header {
+				text-transform: uppercase;
+				display: flex;
+				color: #bab8b8;
+		    font-size: 8px;
+		    font-weight: bold;
+		    line-height: 10px;
+				margin-bottom: 2px;
+				display: none;
+
+				span {
+					width: 100%;
+				}
+			}
+		}
+
+		.sheet-form-inline {
+			border: 0;
+			margin-left: -5px;
+			margin-right: -5px;
+			border-radius: 0;
+
+			&:not(:first-child) {
+				margin-top: 5px;
+			}
+
+			> .sheet-form-header {
+				background: #dddddd;
+				color: inherit;
+				font-size: 9px;
+				line-height: 14px;
+			}
+
+			> .sheet-form-body {
+				padding-bottom: 0;
+			}
+		}
+	}
+}
