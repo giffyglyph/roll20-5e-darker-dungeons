@@ -2,7 +2,6 @@
 
 const beautify = require('gulp-beautify');
 const file = require('gulp-file');
-const folders = require('../modules/folders.js');
 const fs = require('fs');
 const glob = require('glob');
 const gulp = require('gulp');

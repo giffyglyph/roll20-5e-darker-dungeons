@@ -1,6 +1,6 @@
 {
   "name": "darker-dungeons-roll20",
-  "version": "0.0.1",
+  "version": "2.2.0",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
@@ -10,14 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "del": "^5.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.18.3",
     "gulp": "^4.0.2",
     "gulp-beautify": "^3.0.0",
-    "gulp-eslint": "^6.0.0",
     "gulp-file": "^0.4.0",
     "gulp-if": "^3.0.0",
     "gulp-remove-empty-lines": "^0.1.0",
