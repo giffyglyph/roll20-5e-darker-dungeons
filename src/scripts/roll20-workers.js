@@ -154,7 +154,7 @@ on("change:death_save_mod", function(eventinfo) {
 });
 
 ['acrobatics','animal_handling','arcana','athletics','deception','history','insight','intimidation','investigation', 'medicine','nature','perception','performance','persuasion','religion','sleight_of_hand','stealth','survival'].forEach(attr => {
-	on(`change:${attr}_prof change:${attr}_type change:${attr}_flat`, function(eventinfo) {
+	on(`change:${attr}_prof change:${attr}_type change:${attr}_flat change:${attr}_attribute`, function(eventinfo) {
 		if(eventinfo.sourceType === "sheetworker") {return;};
 		update_skills([`${attr}`]);
 	});
@@ -785,8 +785,7 @@ var update_all_ability_checks = function(){
 };
 
 var update_skills = function (skills_array) {
-	var skill_parent = {athletics: "strength", acrobatics: "dexterity", sleight_of_hand: "dexterity", stealth: "dexterity", arcana: "intelligence", history: "intelligence", investigation: "intelligence", nature: "intelligence", religion: "intelligence", animal_handling: "wisdom", insight: "wisdom", medicine: "wisdom", perception: "wisdom", survival: "wisdom", deception: "charisma", intimidation: "charisma", performance: "charisma", persuasion: "charisma"};
-	var attrs_to_get = ["pb","pb_type","jack_of_all_trades","jack"];
+	var attrs_to_get = ["pb","pb_type","jack_of_all_trades","jack","strength_mod","dexterity_mod","constitution_mod","intelligence_mod","wisdom_mod","charisma_mod"];
 	var update = {};
 	var callbacks = [];
 
@@ -795,7 +794,7 @@ var update_skills = function (skills_array) {
 	};
 
 	_.each(skills_array, function(s) {
-		if(skill_parent[s] && attrs_to_get.indexOf(skill_parent[s]) === -1) {attrs_to_get.push(skill_parent[s] + "_mod")};
+		attrs_to_get.push(s + "_attribute")
 		attrs_to_get.push(s + "_prof");
 		attrs_to_get.push(s + "_type");
 		attrs_to_get.push(s + "_flat");
@@ -810,7 +809,11 @@ var update_skills = function (skills_array) {
 		getAttrs(attrs_to_get, function(v) {
 			_.each(skills_array, function(s) {
 				console.log("UPDATING SKILL: " + s);
-				var attr_mod = v[skill_parent[s] + "_mod"] ? parseInt(v[skill_parent[s] + "_mod"], 10) : 0;
+				var attr_mod = 0;
+				if (v[s + "_attribute"]) {
+					var attribute = v[s + "_attribute"].toLowerCase() + "_mod";
+					attr_mod = parseInt(v[attribute], 10);
+				}
 				var prof = v[s + "_prof"] != 0 && !isNaN(v["pb"]) ? parseInt(v["pb"], 10) : 0;
 				var flat = v[s + "_flat"] && !isNaN(parseInt(v[s + "_flat"], 10)) ? parseInt(v[s + "_flat"], 10) : 0;
 				var type = v[s + "_type"] && !isNaN(parseInt(v[s + "_type"], 10)) ? parseInt(v[s + "_type"], 10) : 1;

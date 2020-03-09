@@ -112,6 +112,38 @@
 				grid-area: skills;
 			}
 
+			.sheet-pc-skill {
+
+				.sheet-checkbox-image,
+				span {
+					flex-grow: 0;
+					flex-shrink: 0;
+				}
+
+				button {
+					flex-grow: 0;
+				}
+
+				select {
+					margin: 0;
+					padding: 0;
+					height: 18px;
+					font-size: 11px;
+					width: 5rem;
+					border: none;
+					flex-grow: 1;
+					color: #b3b3b3;
+				}
+
+				&.sheet-pc-skill-animal-handling button {
+					letter-spacing: -0.6px;
+				}
+
+				&.sheet-pc-skill-sleight-of-hand button {
+					letter-spacing: -0.25px;
+				}
+			}
+
 			.sheet-pc-tools {
 				grid-area: tools;
 

@@ -321,7 +321,7 @@
 									<select name="attr_rtype">
 										<option value="{{always=1}} {{r2=[[@{d20}...]]}}">Always Roll Advantage</option>
 										<option value="@{advantagetoggle}">Advantage Toggle</option>
-										<option value="{{query=1}} ?{Advantage?|Normal Roll,&#123;&#123;normal=1&#125;&#125; &#123;&#123;r2=[[0d20|Advantage,&#123;&#123;advantage=1&#125;&#125; &#123;&#123;r2=[[@{d20}|Disadvantage,&#123;&#123;disadvantage=1&#125;&#125; &#123;&#123;r2=[[@{d20}}">Query Advantage</option>
+										<option value="{{query=1}} ?{Advantage?|Normal Roll,&#123&#123normal=1&#125&#125 &#123&#123r2=[[0d20|Advantage,&#123&#123advantage=1&#125&#125 &#123&#123r2=[[@{d20}|Disadvantage,&#123&#123disadvantage=1&#125&#125 &#123&#123r2=[[@{d20}}">Query Advantage</option>
 										<option value="{{normal=1}} {{r2=[[0d20...]]}}">Never Roll Advantage</option>
 									</select>
 								</div>
@@ -1207,15 +1207,31 @@
 												<span></span>
 											</div>
 											<span name="attr_acrobatics_bonus" title="@{acrobatics_bonus}">0</span>
-											<button type="roll" name="roll_acrobatics" value="@{wtype}&{template:simple} {{rname=Acrobatics}} {{mod=@{acrobatics_bonus}}} {{r1=[[@{d20}+@{acrobatics_bonus}@{pbd_safe}]]}} @{rtype}+@{acrobatics_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}">Acrobatics <span>(Dex)</span></button>
+											<button type="roll" name="roll_acrobatics" value="@{wtype}&{template:simple} {{rname=@{acrobatics_attribute} (Acrobatics)}} {{mod=@{acrobatics_bonus}}} {{r1=[[@{d20}+@{acrobatics_bonus}@{pbd_safe}]]}} @{rtype}+@{acrobatics_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}">Acrobatics</button>
+											<select name="attr_acrobatics_attribute" title="@{acrobatics_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity" selected="selected">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
-										<div class="sheet-pc-skill">
+										<div class="sheet-pc-skill sheet-pc-skill-animal-handling">
 											<div class="sheet-checkbox-image">
 												<input type="checkbox" name="attr_animal_handling_prof" title="@{animal_handling_prof}" value="(@{pb}*@{animal_handling_type})">
 												<span></span>
 											</div>
 											<span name='attr_animal_handling_bonus' title='@{animal_handling_bonus}'>0</span>
-											<button type='roll' name='roll_animal_handling' value='@{wtype}&{template:simple} {{rname=Animal Handling}} {{mod=@{animal_handling_bonus}}} {{r1=[[@{d20}+@{animal_handling_bonus}@{pbd_safe}]]}} @{rtype}+@{animal_handling_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Animal Handling <span>(Wis)</span></button>
+											<button type='roll' name='roll_animal_handling' value='@{wtype}&{template:simple} {{rname=@{animal_handling_attribute} (Animal Handling)}} {{mod=@{animal_handling_bonus}}} {{r1=[[@{d20}+@{animal_handling_bonus}@{pbd_safe}]]}} @{rtype}+@{animal_handling_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Animal Handling</button>
+											<select name="attr_animal_handling_attribute" title="@{animal_handling_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom" selected="selected">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1223,7 +1239,15 @@
 												<span></span>
 											</div>
 											<span name='attr_arcana_bonus' title='@{arcana_bonus}'>0</span>
-											<button type='roll' name='roll_arcana' value='@{wtype}&{template:simple} {{rname=Arcana}} {{mod=@{arcana_bonus}}} {{r1=[[@{d20}+@{arcana_bonus}@{pbd_safe}]]}} @{rtype}+@{arcana_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Arcana <span>(Int)</span></button>
+											<button type='roll' name='roll_arcana' value='@{wtype}&{template:simple} {{rname=@{arcana_attribute} (Arcana)}} {{mod=@{arcana_bonus}}} {{r1=[[@{d20}+@{arcana_bonus}@{pbd_safe}]]}} @{rtype}+@{arcana_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Arcana</button>
+											<select name="attr_arcana_attribute" title="@{arcana_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence" selected="selected">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1231,7 +1255,15 @@
 												<span></span>
 											</div>
 											<span name='attr_athletics_bonus' title='@{athletics_bonus}'>0</span>
-											<button type='roll' name='roll_athletics' value='@{wtype}&{template:simple} {{rname=Athletics}} {{mod=@{athletics_bonus}}} {{r1=[[@{d20}+@{athletics_bonus}@{pbd_safe}]]}} @{rtype}+@{athletics_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Athletics <span>(Str)</span></button>
+											<button type='roll' name='roll_athletics' value='@{wtype}&{template:simple} {{rname=@{athletics_attribute} (Athletics)}} {{mod=@{athletics_bonus}}} {{r1=[[@{d20}+@{athletics_bonus}@{pbd_safe}]]}} @{rtype}+@{athletics_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Athletics</button>
+											<select name="attr_athletics_attribute" title="@{athletics_attribute}">
+												<option value="Strength" selected="selected">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1239,7 +1271,15 @@
 												<span></span>
 											</div>
 											<span name='attr_deception_bonus' title='@{deception_bonus}'>0</span>
-											<button type='roll' name='roll_deception' value='@{wtype}&{template:simple} {{rname=Deception}} {{mod=@{deception_bonus}}} {{r1=[[@{d20}+@{deception_bonus}@{pbd_safe}]]}} @{rtype}+@{deception_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Deception <span>(Cha)</span></button>
+											<button type='roll' name='roll_deception' value='@{wtype}&{template:simple} {{rname=@{deception_attribute} (Deception)}} {{mod=@{deception_bonus}}} {{r1=[[@{d20}+@{deception_bonus}@{pbd_safe}]]}} @{rtype}+@{deception_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Deception</button>
+											<select name="attr_deception_attribute" title="@{deception_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma" selected="selected">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1247,7 +1287,15 @@
 												<span></span>
 											</div>
 											<span name='attr_history_bonus' title='@{history_bonus}'>0</span>
-											<button type='roll' name='roll_history' value='@{wtype}&{template:simple} {{rname=History}} {{mod=@{history_bonus}}} {{r1=[[@{d20}+@{history_bonus}@{pbd_safe}]]}} @{rtype}+@{history_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>History <span>(Int)</span></button>
+											<button type='roll' name='roll_history' value='@{wtype}&{template:simple} {{rname=@{history_attribute} (History)}} {{mod=@{history_bonus}}} {{r1=[[@{d20}+@{history_bonus}@{pbd_safe}]]}} @{rtype}+@{history_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>History</button>
+											<select name="attr_history_attribute" title="@{history_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence" selected="selected">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1255,7 +1303,15 @@
 												<span></span>
 											</div>
 											<span name='attr_insight_bonus' title='@{insight_bonus}'>0</span>
-											<button type='roll' name='roll_insight' value='@{wtype}&{template:simple} {{rname=Insight}} {{mod=@{insight_bonus}}} {{r1=[[@{d20}+@{insight_bonus}@{pbd_safe}]]}} @{rtype}+@{insight_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Insight <span>(Wis)</span></button>
+											<button type='roll' name='roll_insight' value='@{wtype}&{template:simple} {{rname=@{insight_attribute} (Insight)}} {{mod=@{insight_bonus}}} {{r1=[[@{d20}+@{insight_bonus}@{pbd_safe}]]}} @{rtype}+@{insight_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Insight</button>
+											<select name="attr_insight_attribute" title="@{insight_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom" selected="selected">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1263,7 +1319,15 @@
 												<span></span>
 											</div>
 											<span name='attr_intimidation_bonus' title='@{intimidation_bonus}'>0</span>
-											<button type='roll' name='roll_intimidation' value='@{wtype}&{template:simple} {{rname=Intimidation}} {{mod=@{intimidation_bonus}}} {{r1=[[@{d20}+@{intimidation_bonus}@{pbd_safe}]]}} @{rtype}+@{intimidation_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Intimidation <span>(Cha)</span></button>
+											<button type='roll' name='roll_intimidation' value='@{wtype}&{template:simple} {{rname=@{intimidation_attribute} (Intimidation)}} {{mod=@{intimidation_bonus}}} {{r1=[[@{d20}+@{intimidation_bonus}@{pbd_safe}]]}} @{rtype}+@{intimidation_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Intimidation</button>
+											<select name="attr_intimidation_attribute" title="@{intimidation_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma" selected="selected">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1271,7 +1335,15 @@
 												<span></span>
 											</div>
 											<span name='attr_investigation_bonus' title='@{investigation_bonus}'>0</span>
-											<button type='roll' name='roll_investigation' value='@{wtype}&{template:simple} {{rname=Investigation}} {{mod=@{investigation_bonus}}} {{r1=[[@{d20}+@{investigation_bonus}@{pbd_safe}]]}} @{rtype}+@{investigation_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Investigation <span>(Int)</span></button>
+											<button type='roll' name='roll_investigation' value='@{wtype}&{template:simple} {{rname=@{investigation_attribute} (Investigation)}} {{mod=@{investigation_bonus}}} {{r1=[[@{d20}+@{investigation_bonus}@{pbd_safe}]]}} @{rtype}+@{investigation_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Investigation</button>
+											<select name="attr_investigation_attribute" title="@{investigation_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence" selected="selected">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1279,7 +1351,15 @@
 												<span></span>
 											</div>
 											<span name='attr_medicine_bonus' title='@{medicine_bonus}'>0</span>
-											<button type='roll' name='roll_medicine' value='@{wtype}&{template:simple} {{rname=Medicine}} {{mod=@{medicine_bonus}}} {{r1=[[@{d20}+@{medicine_bonus}@{pbd_safe}]]}} @{rtype}+@{medicine_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Medicine <span>(Wis)</span></button>
+											<button type='roll' name='roll_medicine' value='@{wtype}&{template:simple} {{rname=@{medicine_attribute} (Medicine)}} {{mod=@{medicine_bonus}}} {{r1=[[@{d20}+@{medicine_bonus}@{pbd_safe}]]}} @{rtype}+@{medicine_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Medicine</button>
+											<select name="attr_medicine_attribute" title="@{medicine_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom" selected="selected">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1287,7 +1367,15 @@
 												<span></span>
 											</div>
 											<span name='attr_nature_bonus' title='@{nature_bonus}'>0</span>
-											<button type='roll' name='roll_nature' value='@{wtype}&{template:simple} {{rname=Nature}} {{mod=@{nature_bonus}}} {{r1=[[@{d20}+@{nature_bonus}@{pbd_safe}]]}} @{rtype}+@{nature_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Nature <span>(Int)</span></button>
+											<button type='roll' name='roll_nature' value='@{wtype}&{template:simple} {{rname=@{nature_attribute} (Nature)}} {{mod=@{nature_bonus}}} {{r1=[[@{d20}+@{nature_bonus}@{pbd_safe}]]}} @{rtype}+@{nature_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Nature</button>
+											<select name="attr_nature_attribute" title="@{nature_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence" selected="selected">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1295,7 +1383,15 @@
 												<span></span>
 											</div>
 											<span name='attr_perception_bonus' title='@{perception_bonus}'>0</span>
-											<button type='roll' name='roll_perception' value='@{wtype}&{template:simple} {{rname=Perception}} {{mod=@{perception_bonus}}} {{r1=[[@{d20}+@{perception_bonus}@{pbd_safe}]]}} @{rtype}+@{perception_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Perception <span>(Wis)</span></button>
+											<button type='roll' name='roll_perception' value='@{wtype}&{template:simple} {{rname=@{perception_attribute} (Perception)}} {{mod=@{perception_bonus}}} {{r1=[[@{d20}+@{perception_bonus}@{pbd_safe}]]}} @{rtype}+@{perception_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Perception</button>
+											<select name="attr_perception_attribute" title="@{perception_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom" selected="selected">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1303,7 +1399,15 @@
 												<span></span>
 											</div>
 											<span name='attr_performance_bonus' title='@{performance_bonus}'>0</span>
-											<button type='roll' name='roll_performance' value='@{wtype}&{template:simple} {{rname=Performance}} {{mod=@{performance_bonus}}} {{r1=[[@{d20}+@{performance_bonus}@{pbd_safe}]]}} @{rtype}+@{performance_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Performance <span>(Cha)</span></button>
+											<button type='roll' name='roll_performance' value='@{wtype}&{template:simple} {{rname=@{performance_attribute} (Performance)}} {{mod=@{performance_bonus}}} {{r1=[[@{d20}+@{performance_bonus}@{pbd_safe}]]}} @{rtype}+@{performance_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Performance</button>
+											<select name="attr_performance_attribute" title="@{performance_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma" selected="selected">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1311,7 +1415,15 @@
 												<span></span>
 											</div>
 											<span name='attr_persuasion_bonus' title='@{persuasion_bonus}'>0</span>
-											<button type='roll' name='roll_persuasion' value='@{wtype}&{template:simple} {{rname=Persuasion}} {{mod=@{persuasion_bonus}}} {{r1=[[@{d20}+@{persuasion_bonus}@{pbd_safe}]]}} @{rtype}+@{persuasion_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Persuasion <span>(Cha)</span></button>
+											<button type='roll' name='roll_persuasion' value='@{wtype}&{template:simple} {{rname=@{persuasion_attribute} (Persuasion)}} {{mod=@{persuasion_bonus}}} {{r1=[[@{d20}+@{persuasion_bonus}@{pbd_safe}]]}} @{rtype}+@{persuasion_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Persuasion</button>
+											<select name="attr_persuasion_attribute" title="@{persuasion_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma" selected="selected">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1319,15 +1431,31 @@
 												<span></span>
 											</div>
 											<span name='attr_religion_bonus' title='@{religion_bonus}'>0</span>
-											<button type='roll' name='roll_religion' value='@{wtype}&{template:simple} {{rname=Religion}} {{mod=@{religion_bonus}}} {{r1=[[@{d20}+@{religion_bonus}@{pbd_safe}]]}} @{rtype}+@{religion_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Religion <span>(Int)</span></button>
+											<button type='roll' name='roll_religion' value='@{wtype}&{template:simple} {{rname=@{religion_attribute} (Religion)}} {{mod=@{religion_bonus}}} {{r1=[[@{d20}+@{religion_bonus}@{pbd_safe}]]}} @{rtype}+@{religion_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Religion</button>
+											<select name="attr_religion_attribute" title="@{religion_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence" selected="selected">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
-										<div class="sheet-pc-skill">
+										<div class="sheet-pc-skill sheet-pc-skill-sleight-of-hand">
 											<div class="sheet-checkbox-image">
 												<input type="checkbox" name="attr_sleight_of_hand_prof" title="@{sleight_of_hand_prof}" value="(@{pb}*@{sleight_of_hand_type})">
 												<span></span>
 											</div>
 											<span name='attr_sleight_of_hand_bonus' title='@{sleight_of_hand_bonus}'>0</span>
-											<button type='roll' name='roll_sleight_of_hand' value='@{wtype}&{template:simple} {{rname=Sleight of Hand}} {{mod=@{sleight_of_hand_bonus}}} {{r1=[[@{d20}+@{sleight_of_hand_bonus}@{pbd_safe}]]}} @{rtype}+@{sleight_of_hand_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Sleight of Hand <span>(Dex)</span></button>
+											<button type='roll' name='roll_sleight_of_hand' value='@{wtype}&{template:simple} {{rname=@{sleight_of_hand_attribute} (Sleight of Hand)}} {{mod=@{sleight_of_hand_bonus}}} {{r1=[[@{d20}+@{sleight_of_hand_bonus}@{pbd_safe}]]}} @{rtype}+@{sleight_of_hand_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Sleight of Hand</button>
+											<select name="attr_sleight_of_hand_attribute" title="@{sleight_of_hand_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity" selected="selected">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1335,7 +1463,15 @@
 												<span></span>
 											</div>
 											<span name='attr_stealth_bonus' title='@{stealth_bonus}'>0</span>
-											<button type='roll' name='roll_stealth' value='@{wtype}&{template:simple} {{rname=Stealth}} {{mod=@{stealth_bonus}}} {{r1=[[@{d20}+@{stealth_bonus}@{pbd_safe}]]}} @{rtype}+@{stealth_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Stealth <span>(Dex)</span></button>
+											<button type='roll' name='roll_stealth' value='@{wtype}&{template:simple} {{rname=@{stealth_attribute} (Stealth)}} {{mod=@{stealth_bonus}}} {{r1=[[@{d20}+@{stealth_bonus}@{pbd_safe}]]}} @{rtype}+@{stealth_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Stealth</button>
+											<select name="attr_stealth_attribute" title="@{stealth_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity" selected="selected">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 										<div class="sheet-pc-skill">
 											<div class="sheet-checkbox-image">
@@ -1343,7 +1479,15 @@
 												<span></span>
 											</div>
 											<span name='attr_survival_bonus' title='@{survival_bonus}'>0</span>
-											<button type='roll' name='roll_survival' value='@{wtype}&{template:simple} {{rname=Survival}} {{mod=@{survival_bonus}}} {{r1=[[@{d20}+@{survival_bonus}@{pbd_safe}]]}} @{rtype}+@{survival_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Survival <span>(Wis)</span></button>
+											<button type='roll' name='roll_survival' value='@{wtype}&{template:simple} {{rname=@{survival_attribute} (Survival)}} {{mod=@{survival_bonus}}} {{r1=[[@{d20}+@{survival_bonus}@{pbd_safe}]]}} @{rtype}+@{survival_bonus}@{pbd_safe}]]}} {{global=@{global_skill_mod}}} @{charname_output}'>Survival</button>
+											<select name="attr_survival_attribute" title="@{survival_attribute}">
+												<option value="Strength">Str</option>
+												<option value="Dexterity">Dex</option>
+												<option value="Constitution">Con</option>
+												<option value="Intelligence">Int</option>
+												<option value="Wisdom" selected="selected">Wis</option>
+												<option value="Charisma">Cha</option>
+											</select>
 										</div>
 									</div>
 								</div>
@@ -6049,7 +6193,7 @@
 													<select name="attr_rtype" title="@{rtype}">
 														<option value="{{always=1}} {{r2=[[@{d20}...]]}}">Always Roll Advantage</option>
 														<option value="@{advantagetoggle}">Advantage Toggle</option>
-														<option value="{{query=1}} ?{Advantage?|Normal Roll,&#123;&#123;normal=1&#125;&#125; &#123;&#123;r2=[[0d20|Advantage,&#123;&#123;advantage=1&#125;&#125; &#123;&#123;r2=[[@{d20}|Disadvantage,&#123;&#123;disadvantage=1&#125;&#125; &#123;&#123;r2=[[@{d20}}">Query Advantage</option>
+														<option value="{{query=1}} ?{Advantage?|Normal Roll,&#123&#123normal=1&#125&#125 &#123&#123r2=[[0d20|Advantage,&#123&#123advantage=1&#125&#125 &#123&#123r2=[[@{d20}|Disadvantage,&#123&#123disadvantage=1&#125&#125 &#123&#123r2=[[@{d20}}">Query Advantage</option>
 														<option value="{{normal=1}} {{r2=[[0d20...]]}}">Never Roll Advantage</option>
 													</select>
 												</div>
