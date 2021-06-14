@@ -10,6 +10,8 @@
 
 Want to play [Giffyglyph's Darker Dungeons](https://github.com/giffyglyph/giffyglyphs-darker-dungeons) in [Roll 20](https://roll20.net/)? No worries—**Giffyglyph's Roll20 Darker Dungeons** has you covered with a new, fully-featured character sheet!
 
+* [Read the Changelog](https://github.com/giffyglyph/roll20-5e-darker-dungeons/blob/master/docs/CHANGELOG.md) 
+
 ## Features
 
 * A new character sheet and NPC sheet.
