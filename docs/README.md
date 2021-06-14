@@ -1,4 +1,4 @@
-![Roll20 Social Banner](./img/roll20-banner.png)
+![Roll20 Social Banner](./img/roll20-banner.jpg)
 
 # Foundry Quick Quest
 
