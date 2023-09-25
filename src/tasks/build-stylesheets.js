@@ -6,7 +6,7 @@ const gulpif = require('gulp-if');
 const path = require('path');
 const remove = require('gulp-remove-empty-lines');
 const replace = require('gulp-replace');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('build-stylesheets-dev', function () {

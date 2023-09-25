@@ -16,9 +16,10 @@
     "gulp-if": "^3.0.0",
     "gulp-remove-empty-lines": "^0.1.0",
     "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "path": "^0.12.7",
-    "require-dir": "^1.2.0"
+    "require-dir": "^1.2.0",
+    "sass": "^1.68.0"
   }
 }
