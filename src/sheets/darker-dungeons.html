@@ -1,4 +1,5 @@
 <div class="sheet-darkerdungeons">
+	<!-- Switch to monster sheet if monster. NPC is not this sheet-->
 	<input class="monster_confirm_flag" type="hidden" name="attr_monster_confirm_flag">
 	<div class="licensecontainer compendium-drop-target monsters">
 		<input class="sheet-toggle-npc" name="attr_npc" type="hidden" value="0">
@@ -926,6 +927,7 @@
 					</div>
 				</div>
 			</div>
+			<!--End of monster sheet, begining of our sheet-->
 			<div class="sheet-section-npc-footer">
 				<p>Giffyglyph's D&D 5e Character Sheet & Trackers</p>
 			</div>
@@ -938,7 +940,8 @@
 				<div class="sheet-section-pc-header-name">
 					<input type="text" name="attr_character_name" title="@{character_name}">
 				</div>
-				<div class="sheet-section-pc-header-details">
+				<!-- Cog wheel for autoasign class race, etc. We don't need this -->
+				<!-- <div class="sheet-section-pc-header-details">
 					<div class="sheet-checkbox-cog">
 						<input type="checkbox" name="attr_options-class-selection"><span></span>
 						<span class="sheet-toggle-icon"></span>
@@ -980,7 +983,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
+					<!-- Headings values -->
 					<div class="sheet-toggle-unchecked">
 						<div class="sheet-section-pc-header-details-panel">
 							<div>
@@ -996,14 +1000,15 @@
 								<input type="text" name="attr_race_display" title="@{race_display}">
 							</div>
 							<div>
-								<label>Alignment</label>
-								<input type="text" name="attr_alignment" title="@{alignment}">
+								<label>Type</label>
+								<input type="text" name="attr_type" title="@{race_type}">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="sheet-section-pc-body">
+				<!-- Mess with stuff here-->
 				<div class="sheet-tabs">
 					<div class="sheet-tab sheet-tab-core">
 						<input type="radio" name="attr_tab" value="core" checked="checked">
