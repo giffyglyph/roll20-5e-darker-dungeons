@@ -940,8 +940,10 @@
 				<div class="sheet-section-pc-header-name">
 					<input type="text" name="attr_character_name" title="@{character_name}">
 				</div>
-				<!-- Cog wheel for autoasign class race, etc. We don't need this -->
-				<!-- <div class="sheet-section-pc-header-details">
+				<!-- Cog wheel for autoasign class race, etc. We don't need this
+				However, removing the cog right here messes up formatting, it appears in a lot of places.
+				I just removed the visability of the cog so I don't bork the whole sheet. -->
+				<div class="sheet-section-pc-header-details">
 					<div class="sheet-checkbox-cog">
 						<input type="checkbox" name="attr_options-class-selection"><span></span>
 						<span class="sheet-toggle-icon"></span>
@@ -983,7 +985,7 @@
 								</div>
 							</div>
 						</div>
-					</div> -->
+					</div>
 					<!-- Headings values -->
 					<div class="sheet-toggle-unchecked">
 						<div class="sheet-section-pc-header-details-panel">
