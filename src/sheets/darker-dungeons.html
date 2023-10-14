@@ -2942,14 +2942,13 @@
 								</div>
 							</div>
 							<div class="sheet-container-well sheet-container-well-memories">
-								<div class="sheet-container-bar sheet-pc-xp">
+								<!-- <div class="sheet-container-bar sheet-pc-xp">
 									<div class="sheet-container-header">Experience</div>
 									<div class="sheet-container-body">
 										<input type="text" name="attr_experience" title="@{experience}">
 									</div>
-								</div>
-								<!-- Removing experince and training borks the sheet, some css modifcations probably need to be made -->
-								<div class="sheet-container-bar sheet-pc-training">
+								</div> -->
+								<!-- <div class="sheet-container-bar sheet-pc-training">
 									<div class="sheet-container-header">Training</div>
 									<div class="sheet-container-body">
 										<div class="sheet-checkbox-image">
@@ -2993,12 +2992,13 @@
 											<span></span>
 										</div>
 									</div>
-								</div>
+								</div> -->
 								<!-- Change this to a text area -->
-								<div class="sheet-container-panel sheet-pc-memories">
+								<div class="sheet-container-panel sheet-pc-description">
 									<div class="sheet-container-header">Character Description</div>
 									<div class="sheet-container-body">
-										<fieldset class="repeating_memories">
+										<textarea name="attr_description" title="@{description}"></textarea>
+										<!-- <fieldset class="repeating_memories">
 											<div class="sheet-fieldset-item">
 												<div class="sheet-checkbox-cog">
 													<input type="checkbox" name="attr_options-flag" checked="checked">
@@ -3026,12 +3026,28 @@
 													</div>
 												</div>
 											</div>
-										</fieldset>
+										</fieldset> -->
+									</div>
+
+								</div>
+								<div class="sheet-container-box sheet-pc-instinct">
+									<div class="sheet-container-header">Instinct</div>
+									<div class="sheet-container-body">
+										<textarea name="attr_instinct" title="@{instinct}"></textarea>
 									</div>
 								</div>
-								<div class="sheet-container-panel sheet-pc-notes">
-									<div class="sheet-container-header">Additional Notes</div>
+								<div class="sheet-container-box sheet-pc-personality">
+									<div class="sheet-container-header">Personality Traits</div>
 									<div class="sheet-container-body">
+										<textarea name="attr_personality" title="@{personality}"></textarea>
+									</div>
+								</div>
+								<div class="sheet-container-box sheet-pc-notes">
+									<div class="sheet-container-header">Additional Notes Link</div>
+									<div class="sheet-container-body">
+									<textarea name="attr_notes" title="@{notes}"></textarea>
+									</div>
+									<!-- <div class="sheet-container-body">
 										<fieldset class="repeating_notes">
 											<div class="sheet-fieldset-item">
 												<div class="sheet-checkbox-cog">
@@ -3061,7 +3077,7 @@
 												</div>
 											</div>
 										</fieldset>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<div class="sheet-container-well sheet-container-well-features">
