@@ -21,9 +21,9 @@
 			grid-column-gap: 5px;
 			grid-row-gap: 5px;
 			grid-template-areas:
-				"details personality"
-				"details ideals"
-				"details bonds"
+				"details goal"
+				"details belief"
+				"details creed"
 				"details flaws";
 		}
 
@@ -131,7 +131,7 @@
 				}
 			}
 
-			.sheet-pc-detail-quest {
+			.sheet-pc-detail-alignment {
 				height: 40px;
 
 				label {
@@ -152,16 +152,16 @@
 			}
 		}
 
-		.sheet-pc-personality {
-			grid-area: personality;
+		.sheet-pc-goal {
+			grid-area: goal;
 		}
 
-		.sheet-pc-ideals {
-			grid-area: ideals;
+		.sheet-pc-belief {
+			grid-area: belief;
 		}
 
-		.sheet-pc-bonds {
-			grid-area: bonds;
+		.sheet-pc-creed {
+			grid-area: creed;
 		}
 
 		.sheet-pc-flaws {
@@ -201,9 +201,9 @@
 			}
 		}
 
-		.sheet-pc-personality,
-		.sheet-pc-ideals,
-		.sheet-pc-bonds,
+		.sheet-pc-goal,
+		.sheet-pc-belief,
+		.sheet-pc-creed,
 		.sheet-pc-flaws {
 
 			textarea {
