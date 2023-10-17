@@ -2887,49 +2887,51 @@
 											</div>
 										</div>
 										<div class="sheet-pc-detail">
-											<label>Family</label>
-											<select name="attr_character_family" title="@{character_family}">
+											<label>Deity</label>
+											<input type="text" name="attr_character_deity" title="@{character_deity}">
+											<!-- <select name="attr_character_family" title="@{character_deity}">
 												<option value=""></option>
 												<option value="none">None</option>
 												<option value="small">Small</option>
 												<option value="average">Average</option>
 												<option value="large">Large</option>
 												<option value="disowned">Disowned</option>
-											</select>
+											</select> -->
 										</div>
 										<div class="sheet-pc-detail">
-											<label>Raised By</label>
-											<select name="attr_character_raised_by" title="@{character_raised_by}">
+											<label>Theme</label>
+											<input type="text" name="attr_character_theme" title="@{character_theme}">
+											<!-- <select name="attr_character_raised_by" title="@{character_raised_by}">
 												<option value=""></option>
 												<option value="natural_parents">Natural parent(s)</option>
 												<option value="close_family">Close family</option>
 												<option value="adopted">Adopted parent(s)</option>
 												<option value="institution">An institution</option>
 												<option value="yourself">Yourself</option>
-											</select>
+											</select> -->
 										</div>
-										<div class="sheet-pc-detail sheet-pc-detail-quest">
-											<label>Quest</label>
-											<textarea name="attr_character_quest" title="@{character_quest}"></textarea>
+										<div class="sheet-pc-detail sheet-pc-detail-alignment">
+											<label>Alignment</label>
+											<textarea name="attr_character_alignment" title="@{character_alignment}"></textarea>
 										</div>
 									</div>
 								</div>
-								<div class="sheet-container-box sheet-pc-personality">
-									<div class="sheet-container-header">Personality Traits</div>
+								<div class="sheet-container-box sheet-pc-goal">
+									<div class="sheet-container-header">Goal</div>
 									<div class="sheet-container-body">
-										<textarea name="attr_personality_traits" title="@{personality_traits}"></textarea>
+										<textarea name="attr_goal" title="@{goal}"></textarea>
 									</div>
 								</div>
-								<div class="sheet-container-box sheet-pc-ideals">
-									<div class="sheet-container-header">Ideals</div>
+								<div class="sheet-container-box sheet-pc-belief">
+									<div class="sheet-container-header">Belief</div>
 									<div class="sheet-container-body">
-										<textarea name="attr_ideals" title="@{ideals}"></textarea>
+										<textarea name="attr_belief" title="@{belief}"></textarea>
 									</div>
 								</div>
-								<div class="sheet-container-box sheet-pc-bonds">
-									<div class="sheet-container-header">Bonds</div>
+								<div class="sheet-container-box sheet-pc-creed">
+									<div class="sheet-container-header">Creed</div>
 									<div class="sheet-container-body">
-										<textarea name="attr_bonds" title="@{bonds}"></textarea>
+										<textarea name="attr_creed" title="@{creed}"></textarea>
 									</div>
 								</div>
 								<div class="sheet-container-box sheet-pc-flaws">
@@ -2940,13 +2942,13 @@
 								</div>
 							</div>
 							<div class="sheet-container-well sheet-container-well-memories">
-								<div class="sheet-container-bar sheet-pc-xp">
+								<!-- <div class="sheet-container-bar sheet-pc-xp">
 									<div class="sheet-container-header">Experience</div>
 									<div class="sheet-container-body">
 										<input type="text" name="attr_experience" title="@{experience}">
 									</div>
-								</div>
-								<div class="sheet-container-bar sheet-pc-training">
+								</div> -->
+								<!-- <div class="sheet-container-bar sheet-pc-training">
 									<div class="sheet-container-header">Training</div>
 									<div class="sheet-container-body">
 										<div class="sheet-checkbox-image">
@@ -2990,11 +2992,13 @@
 											<span></span>
 										</div>
 									</div>
-								</div>
-								<div class="sheet-container-panel sheet-pc-memories">
-									<div class="sheet-container-header">Memories & Events</div>
+								</div> -->
+								<!-- Change this to a text area -->
+								<div class="sheet-container-panel sheet-pc-description">
+									<div class="sheet-container-header">Character Description</div>
 									<div class="sheet-container-body">
-										<fieldset class="repeating_memories">
+										<textarea name="attr_description" title="@{description}"></textarea>
+										<!-- <fieldset class="repeating_memories">
 											<div class="sheet-fieldset-item">
 												<div class="sheet-checkbox-cog">
 													<input type="checkbox" name="attr_options-flag" checked="checked">
@@ -3022,12 +3026,28 @@
 													</div>
 												</div>
 											</div>
-										</fieldset>
+										</fieldset> -->
+									</div>
+
+								</div>
+								<div class="sheet-container-box sheet-pc-instinct">
+									<div class="sheet-container-header">Instinct</div>
+									<div class="sheet-container-body">
+										<textarea name="attr_instinct" title="@{instinct}"></textarea>
 									</div>
 								</div>
-								<div class="sheet-container-panel sheet-pc-notes">
-									<div class="sheet-container-header">Additional Notes</div>
+								<div class="sheet-container-box sheet-pc-personality">
+									<div class="sheet-container-header">Personality Traits</div>
 									<div class="sheet-container-body">
+										<textarea name="attr_personality" title="@{personality}"></textarea>
+									</div>
+								</div>
+								<div class="sheet-container-box sheet-pc-notes">
+									<div class="sheet-container-header">Additional Notes Link</div>
+									<div class="sheet-container-body">
+									<textarea name="attr_notes" title="@{notes}"></textarea>
+									</div>
+									<!-- <div class="sheet-container-body">
 										<fieldset class="repeating_notes">
 											<div class="sheet-fieldset-item">
 												<div class="sheet-checkbox-cog">
@@ -3057,7 +3077,7 @@
 												</div>
 											</div>
 										</fieldset>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<div class="sheet-container-well sheet-container-well-features">

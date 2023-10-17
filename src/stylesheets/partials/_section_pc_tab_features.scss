@@ -10,7 +10,7 @@
 			grid-row-gap: 5px;
 			grid-template-areas:
 				"details features"
-				"memories features";
+				"description features";
 		}
 
 		.sheet-container-well-details {
@@ -21,33 +21,38 @@
 			grid-column-gap: 5px;
 			grid-row-gap: 5px;
 			grid-template-areas:
-				"details personality"
-				"details ideals"
-				"details bonds"
+				"details goal"
+				"details belief"
+				"details creed"
 				"details flaws";
 		}
 
 		.sheet-container-well-memories {
-			grid-area: memories;
+			grid-area: description;
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(2, 30px) auto;
+			grid-template-rows: 1fr 2fr 1fr;
 			grid-column-gap: 5px;
 			grid-row-gap: 5px;
 			grid-template-areas:
-				"memories xp"
-				"memories training"
-				"memories notes";
+				"description instinct"
+				"description personality"
+				"description notes";
 		}
 
 		.sheet-container-well-features {
 			grid-area: features;
 			display: grid;
 			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 2fr 1fr 1fr;
+			grid-template-rows: 3fr 1fr 1fr;
 			grid-column-gap: 5px;
 			grid-row-gap: 5px;
 			grid-template-areas:
-				"features";
+				"features"
+				"features"
+				"features"
+				;
 		}
 
 		.sheet-pc-details {
@@ -131,7 +136,7 @@
 				}
 			}
 
-			.sheet-pc-detail-quest {
+			.sheet-pc-detail-alignment {
 				height: 40px;
 
 				label {
@@ -152,59 +157,73 @@
 			}
 		}
 
-		.sheet-pc-personality {
-			grid-area: personality;
+		.sheet-pc-goal {
+			grid-area: goal;
 		}
 
-		.sheet-pc-ideals {
-			grid-area: ideals;
+		.sheet-pc-belief {
+			grid-area: belief;
 		}
 
-		.sheet-pc-bonds {
-			grid-area: bonds;
+		.sheet-pc-creed {
+			grid-area: creed;
 		}
 
 		.sheet-pc-flaws {
 			grid-area: flaws;
 		}
 
-		.sheet-pc-xp {
-			grid-area: xp;
+		// .sheet-pc-xp {
+		// 	grid-area: xp;
 
-			input {
-				width: 140px;
-			}
-		}
+		// 	input {
+		// 		width: 140px;
+		// 	}
+		// }
 
-		.sheet-pc-training {
-			grid-area: training;
-		}
+		// .sheet-pc-training {
+		// 	grid-area: training;
+		// }
 
-		.sheet-pc-memories {
-			grid-area: memories;
+		.sheet-pc-description {
+			grid-area: description;
 
-			.repitem + .repitem {
-				margin-top: 5px;
-				padding-top: 5px;
-				border-top: 1px dotted #dddddd;
-			}
+			// .repitem + .repitem {
+			// 	margin-top: 5px;
+			// 	padding-top: 5px;
+			// 	border-top: 1px dotted #dddddd;
+			// }
 
-			.sheet-pc-memory {
+			textarea {
+				flex-grow: 1;
+				min-height: 39px;
 				font-size: 11px;
-
-				span:first-of-type {
-					font-weight: bold;
-					background: #dddddd;
-					padding: 3px 5px;
-					border-radius: 3px;
-				}
+				border: 0;
+				padding: 0;
+				resize: none;
+				margin: 0;
+				height: auto;
+				line-height: 13px;
 			}
+
+			// .sheet-pc-memory {
+			// 	font-size: 11px;
+
+			// 	span:first-of-type {
+			// 		font-weight: bold;
+			// 		background: #dddddd;
+			// 		padding: 3px 5px;
+			// 		border-radius: 3px;
+			// 	}
+			// }
 		}
 
-		.sheet-pc-personality,
-		.sheet-pc-ideals,
-		.sheet-pc-bonds,
-		.sheet-pc-flaws {
+		.sheet-pc-goal,
+		.sheet-pc-belief,
+		.sheet-pc-creed,
+		.sheet-pc-flaws,
+		.sheet-pc-instinct,
+		.sheet-pc-personality {
 
 			textarea {
 				flex-grow: 1;
@@ -282,22 +301,33 @@
 		.sheet-pc-notes {
 			grid-area: notes;
 
-			.repitem + .repitem {
-				margin-top: 5px;
-				padding-top: 5px;
-				border-top: 1px dotted #dddddd;
-			}
+			// .repitem + .repitem {
+			// 	margin-top: 5px;
+			// 	padding-top: 5px;
+			// 	border-top: 1px dotted #dddddd;
+			// }
 
-			.sheet-pc-note {
-				font-size: 11px;
-
-				span:first-of-type {
-					font-weight: bold;
-					background: #dddddd;
-					padding: 3px 5px;
-					border-radius: 3px;
-				}
+			textarea {
+				flex-grow: 1;
+				min-height: 39px;
+				font-size: 15px;
+				border: 0;
+				padding: 0;
+				resize: none;
+				margin: 0;
+				height: auto;
+				line-height: 13px;
 			}
+			// .sheet-pc-note {
+			// 	font-size: 11px;
+
+			// 	span:first-of-type {
+			// 		font-weight: bold;
+			// 		background: #dddddd;
+			// 		padding: 3px 5px;
+			// 		border-radius: 3px;
+			// 	}
+			// }
 		}
 	}
 }
