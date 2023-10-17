@@ -71,7 +71,7 @@
 		> input[type="radio"]:checked ~ .sheet-tab-content {
 			display: grid;
 			grid-template-columns: auto 262.5px;
-			grid-template-rows: 85px 120px 110px auto;
+			grid-template-rows: 124px 120px 110px auto;
 			grid-column-gap: 5px;
 			grid-row-gap: 5px;
 			grid-template-areas:
@@ -89,11 +89,12 @@
 		.sheet-container-well-equipment-supplies {
 			grid-area: supplies;
 			display: grid;
-			grid-template-rows: repeat(2, 30px);
+			grid-template-rows: repeat(3, 30px);
 			grid-row-gap: 5px;
 			grid-template-areas:
 				"rations"
-				"water";
+				"water"
+				"bandage";
 		}
 
 		.sheet-container-well-equipment-purse {
@@ -144,6 +145,10 @@
 			grid-area: water;
 		}
 
+		.sheet-pc-bandage {
+			grid-area: bandage;
+		}
+
 		.sheet-pc-equipment-container-footer {
 			font-size: 7px;
 			display: flex;
@@ -191,7 +196,23 @@
 			border-radius: 100%;
 		}
 
+		.sheet-pc-item-quick {
+			background: gold;
+			color: black;
+			display: inline-block;
+			height: 14px;
+			width: 14px;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 100%;
+		}
+
 		[name="attr_equipped"][value="1"] ~ .sheet-pc-item-carried {
+			display: none;
+		}
+
+		[name="attr_isquick"][value="1"] ~ .sheet-pc-item-carried {
 			display: none;
 		}
 
@@ -287,9 +308,22 @@
 				color: white;
 			}
 
+			.sheet-pc-item-quick{
+				background: none;
+				border: 1px solid #dddddd;
+				color: white;
+			}
+
 			[name="attr_equipped"][value="1"] ~ .sheet-pc-item-carried {
 				display: none;
 			}
+
+			//I have no idea how this works
+			//TODO, replace E and C with gold 
+			//for quick swap equipment.
+			// [name="attr_isquick"][value="0"] ~ .sheet-pc-item-carried {
+			// 	display: none;
+			// }
 
 			[name="attr_equipped"][value="0"] ~ [name="attr_carried"][value="0"] + .sheet-pc-item-carried {
 				display: inline-flex !important;
@@ -297,6 +331,12 @@
 				border: 1px solid #dddddd;
 				color: $theme-primary;
 			}
+			// [name="attr_isquick"][value="0"] ~ [name="attr_carried"][value="0"] + .sheet-pc-item-carried {
+			// 	display: inline-flex !important;
+			// 	background: none;
+			// 	border: 1px solid #dddddd;
+			// 	color: gold;
+			// }
 		}
 
 		.sheet-form-item {

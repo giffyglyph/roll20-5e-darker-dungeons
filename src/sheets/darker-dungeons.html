@@ -2125,6 +2125,31 @@
 											</div>
 										</div>
 									</div>
+									<div class="sheet-container-bar sheet-pc-water">
+										<div class="sheet-container-header">Waterskin</div>
+										<div class="sheet-container-body">
+											<div class="sheet-checkbox-image">
+												<input type="checkbox" name="attr_waterskin_1" title="@{waterskin_1}">
+												<span></span>
+											</div>
+											<div class="sheet-checkbox-image">
+												<input type="checkbox" name="attr_waterskin_2" title="@{waterskin_2}">
+												<span></span>
+											</div>
+											<div class="sheet-checkbox-image">
+												<input type="checkbox" name="attr_waterskin_3" title="@{waterskin_3}">
+												<span></span>
+											</div>
+											<div class="sheet-checkbox-image">
+												<input type="checkbox" name="attr_waterskin_4" title="@{waterskin_4}">
+												<span></span>
+											</div>
+											<div class="sheet-checkbox-image">
+												<input type="checkbox" name="attr_waterskin_5" title="@{waterskin_5}">
+												<span></span>
+											</div>
+										</div>
+									</div>
 									<div class="sheet-container-box sheet-pc-exhaustion">
 										<div class="sheet-container-header">Exhaustion</div>
 										<div class="sheet-container-body">
@@ -3204,6 +3229,31 @@
 										</div>
 									</div>
 								</div>
+								<div class="sheet-container-bar sheet-pc-bandage">
+									<div class="sheet-container-header">Medical Supplies</div>
+									<div class="sheet-container-body">
+										<div class="sheet-checkbox-image">
+											<input type="checkbox" name="attr_bandadge_1" title="@{bandage_1}">
+											<span></span>
+										</div>
+										<div class="sheet-checkbox-image">
+											<input type="checkbox" name="attr_bandage_2" title="@{bandage_2}">
+											<span></span>
+										</div>
+										<div class="sheet-checkbox-image">
+											<input type="checkbox" name="attr_bandage_3" title="@{bandage_3}">
+											<span></span>
+										</div>
+										<div class="sheet-checkbox-image">
+											<input type="checkbox" name="attr_bandage_4" title="@{bandage_4}">
+											<span></span>
+										</div>
+										<div class="sheet-checkbox-image">
+											<input type="checkbox" name="attr_bandage_5" title="@{bandage_5}">
+											<span></span>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="sheet-container-well sheet-container-well-equipment-purse">
 								<div class="sheet-container-bar sheet-pc-purse-cp">
@@ -3388,7 +3438,7 @@
 																			<span>Fixed (Ignore quantity)</span>
 																		</label>
 																	</div>
-																	<div class="sheet-form-group sheet-item-columns-2">
+																	<!-- <div class="sheet-form-group sheet-item-columns-2">
 																		<div class="sheet-form-group">
 																			<label>Notches:</label>
 																			<input type="text" name="attr_itemnotches" value="0">
@@ -3404,7 +3454,7 @@
 																				<option value="broken">Broken</option>
 																			</select>
 																		</div>
-																	</div>
+																	</div> -->
 																	<div class="sheet-form-group">
 																		<label>Properties:</label>
 																		<input type="text" name="attr_itemproperties">
@@ -3472,10 +3522,16 @@
 																			<span>Use as a Resource</span>
 																		</label>
 																	</div>
-																	<div class="sheet-form-group">
+																	<!-- <div class="sheet-form-group">
 																		<label class="sheet-form-checkbox">
 																			<input type="checkbox" name="attr_hasattack" value="1">
 																			<span>Has an Attack</span>
+																		</label>
+																	</div> -->
+																	<div class="sheet-form-group">
+																		<label class="sheet-form-checkbox">
+																			<input type="checkbox" name="attr_isquick" value="1">
+																			<span>Quick Swap Item</span>
 																		</label>
 																	</div>
 																</div>
@@ -3492,7 +3548,7 @@
 																<span>Quantity</span>
 																<span>Weight</span>
 																<span>Slots</span>
-																<span>Notches</span>
+																<!-- <span>Notches</span> -->
 															</div>
 															<div class="sheet-pc-item-content">
 																<span class="sheet-pc-item-name">
@@ -3500,6 +3556,8 @@
 																	<span class="sheet-pc-item-equipped"><strong>E</strong></span>
 																	<input type="hidden" name="attr_carried" value="1" class="sheet-field-toggle">
 																	<span class="sheet-pc-item-carried"><strong>C</strong></span>
+																	<input type="hidden" name="attr_isquick" value="1" class="sheet-field-toggle">
+																	<span class="sheet-pc-item-quick"><strong>Q</strong></span>
 																	<span name="attr_itemname"></span>
 																</span>
 																<span class="sheet-pc-item-quantity">
@@ -3512,9 +3570,9 @@
 																<span class="sheet-pc-item-slots">
 																	<input type="text" name="attr_itemsize">
 																</span>
-																<span class="sheet-pc-item-notches">
+																<!-- <span class="sheet-pc-item-notches">
 																	<input type="text" name="attr_itemnotches">
-																</span>
+																</span> -->
 															</div>
 														</div>
 													</div>
@@ -3540,7 +3598,7 @@
 															<span>Quantity</span>
 															<span>Weight</span>
 															<span>Slots</span>
-															<span>Notches</span>
+															<!-- <span>Notches</span> -->
 														</div>
 													</div>
 												</div>
